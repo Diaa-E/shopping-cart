@@ -17,6 +17,7 @@
     - Home
     - Shop
     - About
+    - Product details
 
 1. ### Routes
     - Add routes to all page components
@@ -73,6 +74,7 @@
 1. ### Page components (finalized)
     - About
     - Home
+    - Product details
 
 1. ### Dark mode
 
