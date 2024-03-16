@@ -3,6 +3,7 @@ import Shop from "../pages/Shop";
 import ProductDetails from "../pages/ProductDetails";
 import About from "../pages/About";
 import Error from "../pages/Error";
+import Home from "../pages/Home";
 import App from "../App";
 
 export default function Router({ })
@@ -13,6 +14,10 @@ export default function Router({ })
             element: <App />,
             errorElement: <Error />,
             children: [
+                {
+                    index: true,
+                    element: <Home />
+                },
                 {
                     path: "about",
                     element: <About />
