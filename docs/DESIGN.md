@@ -26,8 +26,8 @@
     - ~~Display error code~~
     - ~~Show a link to home~~
 
-1. ### Sync navigation to active route
-    - Highlight active tab in navigation
+1. ### Sync navigation to active route ✅
+    - ~~Highlight active tab in navigation~~
 
 1. ### Custom hooks for fetching products
     - Fetch all products when shop mounts using a custom hook
