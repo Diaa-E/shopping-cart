@@ -11,23 +11,23 @@
 ## Stages
 
 1. ### Navigation Bar ✅
-    - Links to pages ✅
+    - ~~Links to pages~~
 
 1. ### Page Components (return wrappers) ✅
-    - Home ✅
-    - Shop ✅
-    - About ✅
-    - Product details ✅
+    - ~~Home~~
+    - ~~Shop~~
+    - ~~About~~
+    - ~~Product details~~
 
 1. ### Routes ✅
-    - Add routes to all page components ✅
+    - ~~Add routes to all page components~~
 
-1. ### Routes error page
-    - Display error code
-    - Show a link to home
+1. ### Routes error page ✅
+    - ~~Display error code~~
+    - ~~Show a link to home~~
 
 1. ### Sync navigation to active route
-    - Highlight active tab in navigation (minimal styling)
+    - Highlight active tab in navigation
 
 1. ### Custom hooks for fetching products
     - Fetch all products when shop mounts using a custom hook
