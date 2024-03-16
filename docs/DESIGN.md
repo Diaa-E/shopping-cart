@@ -10,17 +10,17 @@
 
 ## Stages
 
-1. ### Navigation Bar
-    - Links to pages
+1. ### Navigation Bar ✅
+    - Links to pages ✅
 
-1. ### Page Components (return wrappers)
-    - Home
-    - Shop
-    - About
-    - Product details
+1. ### Page Components (return wrappers) ✅
+    - Home ✅
+    - Shop ✅
+    - About ✅
+    - Product details ✅
 
-1. ### Routes
-    - Add routes to all page components
+1. ### Routes ✅
+    - Add routes to all page components ✅
 
 1. ### Routes error page
     - Display error code
