@@ -11,7 +11,7 @@ export default function ShopItem({ image, title, price })
             <div className={styles["details"]}>
                 <p className={styles["new-price"]}>
                     ${splitPrice[0]}
-                    <span className={styles["cents"]}>
+                    <span className={styles["price-fraction"]}>
                         {splitPrice[1] ? splitPrice[1] : "00"}
                     </span>
                 </p>
