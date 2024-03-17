@@ -1,8 +1,9 @@
 import styles from "../styles/ShopItem.module.css";
+import { formatPrice } from "../utils/formatPrice";
 
 export default function ShopItem({ image, title, price })
 {
-    const splitPrice = price.toString().split(".");
+    const splitPrice = formatPrice(price);
 
     return (
         <div className={styles["shop-item"]}>
@@ -12,7 +13,7 @@ export default function ShopItem({ image, title, price })
                 <p className={styles["new-price"]}>
                     ${splitPrice[0]}
                     <span className={styles["price-fraction"]}>
-                        {splitPrice[1] ? splitPrice[1] : "00"}
+                        {splitPrice[1]}
                     </span>
                 </p>
             </div>
