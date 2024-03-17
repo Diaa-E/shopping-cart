@@ -1,0 +1,46 @@
+.shop-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.shop-item:hover{
+    box-shadow: var(--shadow-accent);
+}
+
+.shop-item>img{
+    cursor: inherit;
+    max-height: 200px;
+}
+
+.shop-item>h2{
+    cursor: inherit;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.details{
+    cursor: inherit;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.new-price{
+    text-align: start;
+    cursor: inherit;
+    font-size: 1.5rem;
+}
+
+.cents{
+    cursor: inherit;
+    font-size: 1rem;
+    margin-left: .2rem;
+}

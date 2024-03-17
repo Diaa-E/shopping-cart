@@ -33,7 +33,7 @@
     - ~~Fetch all products when shop mounts using a custom hook~~
 
 1. ### Display products on Shop page
-    - Display all products on the shop page
+    - ~~Display all products on the shop page~~
     - Add option to sort by category
     - Add option to sort by name (asc and desc)
     - Add option to sort by price (asc and desc)

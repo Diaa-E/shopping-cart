@@ -1,5 +1,7 @@
+import ShopItem from "../components/ShopItem";
 import useFetchData from "../hooks/useFetchData";
-import { useState, useEffect } from "react";
+
+import styles from "../styles/Shop.module.css";
 
 export default function Shop({})
 {
@@ -11,21 +13,19 @@ export default function Shop({})
 
     return (
         <>
-            <h1>Shop</h1>
+            <div className={styles["items-container"]}>
             {
-                products.data.map(product => {
-                    return (
-                        <div key={product.id}>
-                            <h2>{product.title}</h2>
-                            <img src={product.image} alt="" />
-                            <p>{product.id}</p>
-                            <p>{product.price}</p>
-                            <p>{product.category}</p>
-                            <p>{product.description}</p>
-                        </div>
-                    )
+                products.data.map(item => {
+                    
+                    return <ShopItem
+                                key={item.id}
+                                title={item.title}
+                                image={item.image}
+                                price={item.price}
+                             />
                 })
             }
+            </div>
         </>
     )
 }
