@@ -15,7 +15,6 @@ a{
 *, *::after, *::before{
     outline: none;
     cursor: default;
-    user-select: none;
 }
 
 input[type=text]{
