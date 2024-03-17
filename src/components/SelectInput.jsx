@@ -1,8 +1,10 @@
+import styles from "../styles/SelectInput.module.css";
+
 export default function SelectInput({ options, onChange, selected, id, name })
 {
     return (
         <>
-            <select onChange={onChange} value={selected} name={name} id={id}>
+            <select className={styles["select-input"]} onChange={onChange} value={selected} name={name} id={id}>
             {
                 options.map(option => {
 

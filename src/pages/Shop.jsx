@@ -41,16 +41,18 @@ export default function Shop({})
 
     return (
         <>
-            <SelectInput
-                id={"selectCategory"}
-                name={"Select product category"}
-                selected={selectedCat}
-                options={categories}
-                onChange={(e) => {
-
-                    setSelectedCat(e.target.value);
-                }}
-            />
+            <div className={styles["controls-container"]}>
+            
+                <SelectInput
+                    id={"selectCategory"}
+                    name={"Select product category"}
+                    selected={selectedCat}
+                    options={categories}
+                    onChange={(e) => {
+                        setSelectedCat(e.target.value);
+                    }}
+                />
+            </div>
             <div className={styles["items-container"]}>
             {
                 filteredCat.map(item => {
