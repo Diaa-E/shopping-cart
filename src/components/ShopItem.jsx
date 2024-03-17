@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import styles from "../styles/ShopItem.module.css";
 import { formatPrice } from "../utils/formatPrice";
 
-export default function ShopItem({ image, title, price })
+export default function ShopItem({ image, title, price, id })
 {
     const splitPrice = formatPrice(price);
 
     return (
-        <div className={styles["shop-item"]}>
+        <Link to={"/shop/" + id} className={styles["shop-item"]}>
             <img src={image} alt={title + " image"} />
             <h2>{title}</h2>
             <div className={styles["details"]}>
@@ -17,6 +18,6 @@ export default function ShopItem({ image, title, price })
                     </span>
                 </p>
             </div>
-        </div>
+        </Link>
     )
 }

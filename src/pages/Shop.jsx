@@ -22,6 +22,7 @@ export default function Shop({})
                                 title={item.title}
                                 image={item.image}
                                 price={item.price}
+                                id={item.id}
                              />
                 })
             }
