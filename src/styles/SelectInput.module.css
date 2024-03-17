@@ -1,13 +1,16 @@
 .select-input{
-    padding: 1rem;
+    padding: .3rem;
     border-radius: 2rem;
-    background-color: var(--bg-secondary);
-    box-shadow: var(--shadow);
+    background-color: var(--bg-primary);
+    border: solid var(--text) 1px;
     width: 30%;
     cursor: pointer;
+    transition-duration: .3s;
 }
 
 .select-input:focus{
     outline: auto;
     outline-color: var(--accent);
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow);
 }
