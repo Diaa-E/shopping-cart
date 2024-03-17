@@ -13,6 +13,7 @@
 
 .shop-item:hover{
     box-shadow: var(--shadow-accent);
+    transition-duration: .2s;
 }
 
 .shop-item>img{
