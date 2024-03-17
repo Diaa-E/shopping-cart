@@ -1,12 +1,12 @@
 export function extractCategories(items)
 {
-    const categories = ["All categories"];
+    const categories = [{name : "All categories", value: ""}];
 
     for (const item of items)
     {
-        if (categories.findIndex((current) => current === item.category) < 0)
+        if (categories.findIndex((current) => current.value === item.category) < 0)
         {
-            categories.push(item.category);
+            categories.push({name: item.category, value: item.category});
         }
     }
 
