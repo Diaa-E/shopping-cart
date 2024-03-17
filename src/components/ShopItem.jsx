@@ -10,9 +10,9 @@ export default function ShopItem({ image, title, price })
             <img src={image} alt={title + " image"} />
             <h2>{title}</h2>
             <div className={styles["details"]}>
-                <p className={styles["new-price"]}>
+                <p id="price" className={styles["new-price"]}>
                     ${splitPrice[0]}
-                    <span className={styles["price-fraction"]}>
+                    <span id="price-fraction" className={styles["price-fraction"]}>
                         {splitPrice[1]}
                     </span>
                 </p>

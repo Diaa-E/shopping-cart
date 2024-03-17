@@ -35,6 +35,8 @@
 }
 
 .new-price{
+    display: flex;
+    gap: .2rem;
     text-align: start;
     cursor: inherit;
     font-size: 1.5rem;
@@ -43,5 +45,4 @@
 .price-fraction{
     cursor: inherit;
     font-size: 1rem;
-    margin-left: .2rem;
 }
