@@ -6,21 +6,28 @@ import styles from "../styles/Shop.module.css";
 import { extractCategories } from "../utils/extractCategories";
 import SelectInput from "../components/SelectInput";
 import { filterProducts } from "../utils/filterProducts";
+import { sortByTitle } from "../utils/productSorter";
 
 export default function Shop({})
 {
     const products = useFetchData({url: 'https://fakestoreapi.com/products', method: "GET"});
     const categories = products.data ? extractCategories(products.data) : [];
     const [selectedCat, setSelectedCat] = useState("");
+    const [sortMode, setSortMode] = useState("a-z");
     const [filteredCat, setFilteredCat] = useState([]);
     const [results, setResults] = useState([]);
+
+    const sorters = {
+        "a-z": (items) => sortByTitle(items, false),
+        "z-a": (items) => sortByTitle(items, true),
+    }
 
     useEffect(() => {
 
         if (products.data)
         {
             setSelectedCat(categories[0].value);
-            setFilteredCat(products.data);
+            setFilteredCat(sorters[sortMode](products.data));
             setResults(products.data);
         }
 
@@ -34,6 +41,15 @@ export default function Shop({})
         }
 
     }, [selectedCat]);
+
+    useEffect(() => {
+
+        if(products.data)
+        {
+            setFilteredCat(sorters[sortMode](filteredCat));
+        }
+
+    }, [sortMode]);
 
     if (products.loading) return <h1>Loading...</h1>
 
@@ -50,6 +66,22 @@ export default function Shop({})
                     options={categories}
                     onChange={(e) => {
                         setSelectedCat(e.target.value);
+                    }}
+                />
+                <SelectInput
+                    id={"sortBy"}
+                    name={"Sort products"}
+                    selected={sortMode}
+                    options={[
+                        {
+                            name: "A-Z", value: "a-z"
+                        },
+                        {
+                            name: "Z-A", value: "z-a"
+                        },
+                    ]}
+                    onChange={(e) => {
+                        setSortMode(e.target.value);
                     }}
                 />
             </div>
