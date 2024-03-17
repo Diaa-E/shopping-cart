@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 
-export default function useFetchProducts() {
+export default function useFetchData({url, method}) {
 
-    const [products, setProducts] = useState(null);
+    const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
 
-        fetch('https://fakestoreapi.com/products', { method: "GET", mode: "cors" })
+        fetch(url, { method: method, mode: "cors" })
             .then(response => {
 
                 if (!response.ok) throw new Error("Error: " + response.status);
@@ -17,14 +17,14 @@ export default function useFetchProducts() {
             })
             .then(responseData => {
 
-                setProducts(responseData);
+                setData(responseData);
                 setError(null);
             })
             .catch(err => {
 
                 console.error(err);
                 setError(err);
-                setProducts(null);
+                setData(null);
             })
             .finally(() => {
 
@@ -33,5 +33,5 @@ export default function useFetchProducts() {
 
     }, []);
 
-    return { products, loading, error };
+    return { data: data, loading: loading, error: error };
 }
