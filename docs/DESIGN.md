@@ -29,8 +29,8 @@
 1. ### Sync navigation to active route ✅
     - ~~Highlight active tab in navigation~~
 
-1. ### Custom hooks for fetching products
-    - Fetch all products when shop mounts using a custom hook
+1. ### Custom hooks for fetching products ✅
+    - ~~Fetch all products when shop mounts using a custom hook~~
 
 1. ### Display products on Shop page
     - Display all products on the shop page
