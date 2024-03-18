@@ -3,7 +3,7 @@ import useFetchData from "../hooks/useFetchData";
 import styles from "../styles/ProductDetails.module.css";
 import { formatPrice } from "../utils/formatPrice";
 import RegularButton from "../components/RegularButton";
-import { createCartItem } from "../utils/cartUtility";
+import { addItemToCart, createCartItem } from "../utils/cartUtility";
 import { useState } from "react";
 
 export default function ProductDetails({})
@@ -35,7 +35,9 @@ export default function ProductDetails({})
                 <RegularButton
                     text={"Add to cart"}
                     style="primary"
-                    onClick={() => setCart([...cart, createCartItem(selectedProduct.data, amount)])}
+                    onClick={() => {
+                        setCart(addItemToCart(cart, createCartItem(selectedProduct.data, amount)));
+                    }}
                 />
             </div>
         </>
