@@ -5,6 +5,7 @@ import { formatPrice } from "../utils/formatPrice";
 import RegularButton from "../components/RegularButton";
 import { addItemToCart, createCartItem } from "../utils/cartUtility";
 import { useState } from "react";
+import { NumberInput } from "../components/NumberInput";
 
 export default function ProductDetails({})
 {
@@ -32,6 +33,14 @@ export default function ProductDetails({})
                         </span>
                     </p>
                 </div>
+                <NumberInput
+                    id={"itemAmount"}
+                    name={"item quantity"}
+                    min={1}
+                    max={9999}
+                    value={amount}
+                    onChange={(e) => setAmount(+e.target.value < 1 || +e.target.value > 9999 ? 1 : +e.target.value)}
+                />
                 <RegularButton
                     text={"Add to cart"}
                     style="primary"

@@ -1,0 +1,6 @@
+.number-input{
+    composes: select-input from "./SelectInput.module.css";
+    width: 100%;
+    text-align: center;
+    cursor: text;
+}
