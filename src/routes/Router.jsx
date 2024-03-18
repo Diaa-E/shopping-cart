@@ -28,8 +28,7 @@ export default function Router({ })
                 },
                 {
                     path: "shop/:productId",
-                    element: <ProductDetails />
-                
+                    element: <ProductDetails />,
                 }
             ]
         },

@@ -1,6 +1,33 @@
+import { useParams } from "react-router-dom";
+import useFetchData from "../hooks/useFetchData";
+import styles from "../styles/ProductDetails.module.css";
+import { formatPrice } from "../utils/formatPrice";
+
 export default function ProductDetails({})
 {
+    const { productId } = useParams()
+    const selectedProduct = useFetchData({ url: `https://fakestoreapi.com/products/${productId}`, method: "GET"});
+    const splitPrice = selectedProduct.data ? formatPrice(selectedProduct.data.price) : [];
+
+    if (selectedProduct.loading) return <h1>Loading...</h1>
+
+    if (selectedProduct.error) return <h1>Error</h1>
+
     return (
-        <h1>Product details</h1>
+        <>
+            <div className={styles["product-details-container"]}>
+                <img src={selectedProduct.data.image} alt={selectedProduct.data.title} />
+                <div className={styles["details"]}>
+                    <h1>{selectedProduct.data.title}</h1>
+                    <p>{selectedProduct.data.description}</p>
+                    <p id="price" className={styles["price"]}>
+                        ${splitPrice[0]}
+                        <span id="price-fraction" className={styles["price-fraction"]}>
+                            {splitPrice[1]}
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </>
     )
 }
