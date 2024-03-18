@@ -7,6 +7,7 @@ import { extractCategories } from "../utils/extractCategories";
 import SelectInput from "../components/SelectInput";
 import { filterProducts } from "../utils/filterProducts";
 import { sortByPrice, sortByTitle } from "../utils/productSorter";
+import SearchBar from "../components/SearchBar";
 
 export default function Shop({})
 {
@@ -15,7 +16,7 @@ export default function Shop({})
     const [selectedCat, setSelectedCat] = useState("");
     const [sortMode, setSortMode] = useState("a-z");
     const [filteredCat, setFilteredCat] = useState([]);
-    const [results, setResults] = useState([]);
+    const [searchQuery, setSearchQuery] = useState("");
 
     const sorters = {
         "a-z": (items) => sortByTitle(items, false),
@@ -30,7 +31,6 @@ export default function Shop({})
         {
             setSelectedCat(categories[0].value);
             setFilteredCat(sorters[sortMode](products.data));
-            setResults(products.data);
         }
 
     }, [products.data]);
@@ -83,10 +83,22 @@ export default function Shop({})
                         setSortMode(e.target.value);
                     }}
                 />
+                <SearchBar
+                    query={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    id={"SearchProducts"}
+                    name={"Search products"}
+                />
             </div>
             <div className={styles["items-container"]}>
             {
-                filteredCat.map(item => {
+                filteredCat.filter(item => {
+
+                    if (searchQuery === "") return true;
+
+                    return item.title.toLowerCase().includes(searchQuery) || item.description.toLowerCase().includes(searchQuery);
+
+                }).map(item => {
                     
                     return <ShopItem
                                 key={item.id}

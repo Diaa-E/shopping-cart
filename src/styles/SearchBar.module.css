@@ -1,0 +1,8 @@
+.search-bar{
+    composes: select-input from "./SelectInput.module.css";
+    cursor: text;
+}
+
+.search-bar::placeholder{
+    color: var(--test-placeholder) ;
+}

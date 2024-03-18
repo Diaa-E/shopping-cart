@@ -32,12 +32,12 @@
 1. ### Custom hooks for fetching products ✅
     - ~~Fetch all products when shop mounts using a custom hook~~
 
-1. ### Display products on Shop page
+1. ### Display products on Shop page ✅
     - ~~Display all products on the shop page~~
     - ~~Add option to sort by category~~
     - ~~Add option to sort by name (asc and desc)~~
     - ~~Add option to sort by price (asc and desc)~~
-    - Add a search bar and filter products based on keyword
+    - ~~Add a search bar and filter products based on keyword~~
 
 1. ### Cart component
     - Display current items in the cart
