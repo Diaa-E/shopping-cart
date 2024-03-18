@@ -1,11 +1,13 @@
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import useFetchData from "../hooks/useFetchData";
 import styles from "../styles/ProductDetails.module.css";
 import { formatPrice } from "../utils/formatPrice";
+import RegularButton from "../components/RegularButton";
 
 export default function ProductDetails({})
 {
-    const { productId } = useParams()
+    const [cart, setCart] = useOutletContext().cart;
+    const { productId } = useParams();
     const selectedProduct = useFetchData({ url: `https://fakestoreapi.com/products/${productId}`, method: "GET"});
     const splitPrice = selectedProduct.data ? formatPrice(selectedProduct.data.price) : [];
 
@@ -27,6 +29,11 @@ export default function ProductDetails({})
                         </span>
                     </p>
                 </div>
+                <RegularButton
+                    text={"Add to cart"}
+                    style="primary"
+                    onClick={() => setCart([...cart, selectedProduct.data])}
+                />
             </div>
         </>
     )

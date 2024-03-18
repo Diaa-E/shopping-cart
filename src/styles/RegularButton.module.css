@@ -1,0 +1,31 @@
+.button{
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 5rem;
+    cursor: pointer;
+}
+
+.button:hover{
+    filter: brightness(.9);
+}
+
+.primary{
+    composes: button;
+    background-color: var(--accent);
+    border: solid var(--accent) 2px;
+    color: var(--bg-secondary);
+}
+
+.secondary{
+    composes: button;
+    background-color: var(--bg-secondary);
+    border: solid var(--accent) 2px;
+}
+
+.danger{
+    composes: button;
+    background-color: var(--danger);
+    border: solid var(--danger) 2px;
+    color: var(--bg-secondary);
+}
