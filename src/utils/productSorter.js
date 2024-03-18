@@ -8,3 +8,14 @@ export function sortByTitle(items, reverse)
 
     return sortedItems;
 }
+
+export function sortByPrice(items, reverse)
+{
+    const sortedItems = [...items];
+
+    sortedItems.sort((a, b) => +a.price - +b.price);
+
+    if (reverse) return sortedItems.reverse();
+
+    return sortedItems;
+}
