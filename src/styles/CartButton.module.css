@@ -17,7 +17,8 @@
     cursor: inherit;
     background-color: var(--accent);
     font-size: .8rem;
-    width: 1.5rem;
+    padding: .5rem;
+    min-width: 1.5rem;
     height: 1.5rem;
     border-radius: 5rem;
     margin: auto auto -1rem -1rem;
