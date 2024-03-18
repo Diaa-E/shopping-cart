@@ -8,16 +8,18 @@ export function createCartItem(product, amount)
 
 export function addItemToCart(cart, item)
 {
-    const itemCartIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+    const updatedCart = [...cart];
+
+    const itemCartIndex = updatedCart.findIndex(cartItem => cartItem.id === item.id);
 
     if (itemCartIndex < 0)
     {
-        cart.push(item);
+        updatedCart.push(item);
     }
     else
     {
-        cart[itemCartIndex] = {...item};
+        updatedCart[itemCartIndex] = {...item};
     }
 
-    return cart;
+    return updatedCart;
 }
