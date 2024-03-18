@@ -36,7 +36,7 @@
     - ~~Display all products on the shop page~~
     - ~~Add option to sort by category~~
     - ~~Add option to sort by name (asc and desc)~~
-    - Add option to sort by price (asc and desc)
+    - ~~Add option to sort by price (asc and desc)~~
     - Add a search bar and filter products based on keyword
 
 1. ### Cart component

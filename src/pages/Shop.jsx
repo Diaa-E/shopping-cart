@@ -6,7 +6,7 @@ import styles from "../styles/Shop.module.css";
 import { extractCategories } from "../utils/extractCategories";
 import SelectInput from "../components/SelectInput";
 import { filterProducts } from "../utils/filterProducts";
-import { sortByTitle } from "../utils/productSorter";
+import { sortByPrice, sortByTitle } from "../utils/productSorter";
 
 export default function Shop({})
 {
@@ -20,6 +20,8 @@ export default function Shop({})
     const sorters = {
         "a-z": (items) => sortByTitle(items, false),
         "z-a": (items) => sortByTitle(items, true),
+        "price-l-h": (items) => sortByPrice(items, false),
+        "price-h-l": (items) => sortByPrice(items, true),
     }
 
     useEffect(() => {
@@ -37,19 +39,10 @@ export default function Shop({})
 
         if (products.data)
         {
-            setFilteredCat(filterProducts(products.data, selectedCat));
+            setFilteredCat(sorters[sortMode](filterProducts(products.data, selectedCat)));
         }
 
-    }, [selectedCat]);
-
-    useEffect(() => {
-
-        if(products.data)
-        {
-            setFilteredCat(sorters[sortMode](filteredCat));
-        }
-
-    }, [sortMode]);
+    }, [selectedCat, sortMode]);
 
     if (products.loading) return <h1>Loading...</h1>
 
@@ -78,6 +71,12 @@ export default function Shop({})
                         },
                         {
                             name: "Z-A", value: "z-a"
+                        },
+                        {
+                            name: "Price (Lower first)", value: "price-l-h",
+                        },
+                        {
+                            name: "Price (Higher first)", value: "price-h-l",
                         },
                     ]}
                     onChange={(e) => {
