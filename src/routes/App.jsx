@@ -6,6 +6,7 @@ import NavBar from '../components/NavBar';
 
 import theme from "../styles/theme.module.css";
 import styles from "../styles/App.module.css";
+import CartButton from '../components/CartButton';
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
       <header className={styles.header}>
         <Link to={"/"}>Home</Link>
         <NavBar />
+        <CartButton
+          cartLength={cart.length}
+        />
       </header>
       <Outlet context={{cart: [cart, setCart]}} />
     </>

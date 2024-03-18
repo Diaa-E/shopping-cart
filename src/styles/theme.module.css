@@ -5,6 +5,7 @@
     --danger: #ff204e;
     --text: #000000;
     --test-placeholder: grey;
+    --none: #00000000 ;
     --shadow: 0px 1px 3px rgb(0, 0, 0, 0.1), 0px 6px 12px rgb(0, 0, 0, 0.08);
     --shadow-accent: 0px 0 3px var(--accent), 0px 0px 12px var(--accent);
 }
