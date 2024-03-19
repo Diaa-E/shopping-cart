@@ -42,3 +42,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.cart-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.controls-button{
+    width: 100%;
+}

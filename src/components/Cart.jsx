@@ -1,5 +1,6 @@
 import styles from "../styles/Cart.module.css";
 import CartItem from "./CartItem";
+import RegularButton from "./RegularButton";
 
 export default function Cart({ closeCart, cart, setCart })
 {
@@ -35,6 +36,23 @@ export default function Cart({ closeCart, cart, setCart })
                     )
                 }
                 </div>
+                {
+                    cart.length > 0 &&
+                    <div className={styles["cart-controls"]}>
+                        <RegularButton
+                            text={"Clear cart"}
+                            style="danger"
+                            onClick={() => {setCart([])}}
+                            classes={[styles["controls-button"]]}
+                        />
+                        <RegularButton
+                            text={"Checkout"}
+                            style="primary"
+                            onClick={() => {}}
+                            classes={[styles["controls-button"]]}
+                        />
+                    </div>
+                }
             </div>
         </div>
     )

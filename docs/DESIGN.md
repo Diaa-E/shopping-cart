@@ -46,24 +46,24 @@
     - A remove option triggers a confirmation modal
     - store items in session
     - Calculate subtotal
-    - Add a checkout option
-    - Add a clear cart option
+    - ~~Add a checkout option~~
+    - ~~Add a clear cart option~~
 
-1. ### Product items
-    - Shop items can be added to cart
-    - Add option to set amount by typing
-    - Add dials to fine tune amount
+1. ### Product items ✅
+    - ~~Shop items can be added to cart~~
+    - ~~Add option to set amount by typing~~
+    - ~~Add dials to fine tune amount~~
 
 1. ### Small components
-    - Regular buttons (primary, secondary, danger)
+    - ~~Regular buttons (primary, secondary, danger)~~
     - Icon buttons
-    - Car button
-    - Nav links
+    - ~~Cart button~~
+    - ~~Nav links~~
     - Footer links
-    - Search bar
-    - Select input
-    - Number input
-    - Product item
+    - ~~Search bar~~
+    - ~~Select input~~
+    - ~~Number input~~
+    - ~~Product item~~
 
 1. ### Landmark components
     - Navigation bar
