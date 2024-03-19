@@ -56,7 +56,7 @@
 
 1. ### Small components
     - ~~Regular buttons (primary, secondary, danger)~~
-    - Icon buttons
+    - ~~Icon buttons~~
     - ~~Cart button~~
     - ~~Nav links~~
     - Footer links
@@ -66,8 +66,8 @@
     - ~~Product item~~
 
 1. ### Landmark components
-    - Navigation bar
-    - logo/home link
+    - ~~Navigation bar~~
+    - ~~logo/home link~~
     - Footer
     - Modal
 

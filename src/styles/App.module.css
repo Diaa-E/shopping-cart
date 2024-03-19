@@ -6,3 +6,9 @@
     margin: 0 0 1rem 0;
     box-shadow: var(--shadow);
 }
+
+.logo{
+    height: 50px;
+    margin: auto auto auto 2rem;
+    cursor: pointer;
+}

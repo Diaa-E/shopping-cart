@@ -9,6 +9,8 @@ import styles from "../styles/App.module.css";
 import CartButton from '../components/CartButton';
 import Cart from '../components/Cart';
 
+import logo from "../assets/images/logo.svg";
+
 function App() {
 
   const [cart, setCart] = useState([]);
@@ -22,7 +24,9 @@ function App() {
   return (
     <>
       <header className={styles.header}>
-        <Link to={"/"}>Home</Link>
+        <Link to={"/"}>
+          <img className={styles["logo"]} src={logo} alt="Carter's online shop logo" />
+        </Link>
         <NavBar />
         <CartButton
           cartLength={cart.length}
