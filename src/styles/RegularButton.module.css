@@ -14,7 +14,7 @@
     composes: button;
     background-color: var(--accent);
     border: solid var(--accent) 2px;
-    color: var(--bg-secondary);
+    color: var(--text);
 }
 
 .secondary{
