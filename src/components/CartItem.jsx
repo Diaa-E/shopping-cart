@@ -23,7 +23,7 @@ export default function CartItem({ item, cart, setCart })
                 name={"Item quantity"}
                 value={item.amount}
                 onChange={(e) => {
-                    setCart(addItemToCart(cart, {...item, amount: e.target.value}));
+                    setCart(addItemToCart(cart, {...item, amount: +e.target.value < 1 || +e.target.value > 9999 ? 1 : +e.target.value}));
                 }}
             />
             <RegularButton
