@@ -13,6 +13,11 @@ describe("formatPrice utility function", () => {
         expect(formatPrice("30.1")).toEqual(["30", "10"]);
     });
 
+    it("Handles a price with 2-digit fraction of numerical value less than 10", () => {
+
+        expect(formatPrice("30.05")).toEqual(["30", "05"]);
+    });
+
     it("Corrects a price with no fraction", () => {
 
         expect(formatPrice("45")).toEqual(["45", "00"]);
