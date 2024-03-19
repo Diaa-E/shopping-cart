@@ -4,8 +4,9 @@
     --accent: #4ccd99;
     --danger: #ff204e;
     --text: #000000;
-    --test-placeholder: grey;
+    --text-placeholder: #a4a4a4;
     --none: #00000000 ;
+    --overlay: #0000006b;
     --shadow: 0px 1px 3px rgb(0, 0, 0, 0.1), 0px 6px 12px rgb(0, 0, 0, 0.08);
     --shadow-accent: 0px 0 3px var(--accent), 0px 0px 12px var(--accent);
     --filter-accent: invert(83%) sepia(10%) saturate(2064%) hue-rotate(98deg) brightness(85%) contrast(91%);

@@ -7,10 +7,12 @@ import NavBar from '../components/NavBar';
 import theme from "../styles/theme.module.css";
 import styles from "../styles/App.module.css";
 import CartButton from '../components/CartButton';
+import Cart from '../components/Cart';
 
 function App() {
 
   const [cart, setCart] = useState([]);
+  const [openCart, setOpenCart] = useState(false);
 
   useEffect(() => {
 
@@ -24,9 +26,17 @@ function App() {
         <NavBar />
         <CartButton
           cartLength={cart.length}
+          onClick={() => setOpenCart(true)}
         />
       </header>
       <Outlet context={{cart: [cart, setCart]}} />
+      {
+        openCart &&
+        <Cart
+          closeCart={() => setOpenCart(false)}
+          cart={cart}
+        />
+      }
     </>
   )
 }
