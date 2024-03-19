@@ -1,5 +1,6 @@
 import styles from "../styles/Cart.module.css";
 import CartItem from "./CartItem";
+import PriceTag from "./PriceTag";
 import RegularButton from "./RegularButton";
 
 export default function Cart({ closeCart, cart, setCart })
@@ -38,20 +39,28 @@ export default function Cart({ closeCart, cart, setCart })
                 </div>
                 {
                     cart.length > 0 &&
-                    <div className={styles["cart-controls"]}>
-                        <RegularButton
-                            text={"Clear cart"}
-                            style="danger"
-                            onClick={() => {setCart([])}}
-                            classes={[styles["clear-cart"]]}
-                        />
-                        <RegularButton
-                            text={"Checkout"}
-                            style="primary"
-                            onClick={() => {}}
-                            classes={[styles["checkout"]]}
-                        />
-                    </div>
+                    <>
+                        <h3 className={styles["subtotal"]}>
+                            Subtotal:
+                            <PriceTag
+                                price={cart.reduce((total, current) => total + +current.price.toFixed(2) * +current.amount, 0)}
+                            />
+                        </h3>
+                        <div className={styles["cart-controls"]}>
+                            <RegularButton
+                                text={"Clear cart"}
+                                style="danger"
+                                onClick={() => {setCart([])}}
+                                classes={[styles["clear-cart"]]}
+                            />
+                            <RegularButton
+                                text={"Checkout"}
+                                style="primary"
+                                onClick={() => {}}
+                                classes={[styles["checkout"]]}
+                            />
+                        </div>
+                    </>
                 }
             </div>
         </div>

@@ -45,7 +45,7 @@
     - ~~each item in the cart has a remove option~~
     - A remove option triggers a confirmation modal
     - store items in session
-    - Calculate subtotal
+    - ~~Calculate subtotal~~
     - ~~Add a checkout option~~
     - ~~Add a clear cart option~~
 

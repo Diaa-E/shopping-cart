@@ -47,7 +47,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
     gap: 1rem;
 }
 
@@ -57,4 +56,11 @@
 
 .checkout{
     width: 100%;
+}
+
+.subtotal{
+    display: flex;
+    place-items: center;
+    font-size: 1.5rem;
+    gap: 1rem;
 }
