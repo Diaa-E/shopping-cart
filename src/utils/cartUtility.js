@@ -10,7 +10,7 @@ export function addItemToCart(cart, item)
 {
     const updatedCart = [...cart];
 
-    const itemCartIndex = updatedCart.findIndex(cartItem => cartItem.id === item.id);
+    const itemCartIndex = searchCart(updatedCart, item);
 
     if (itemCartIndex < 0)
     {
@@ -22,4 +22,9 @@ export function addItemToCart(cart, item)
     }
 
     return updatedCart;
+}
+
+export function searchCart(cart, item)
+{
+    return cart.findIndex(cartItem => cartItem.id === item.id);
 }

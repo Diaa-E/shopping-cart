@@ -3,7 +3,7 @@ import useFetchData from "../hooks/useFetchData";
 import styles from "../styles/ProductDetails.module.css";
 import { formatPrice } from "../utils/formatPrice";
 import RegularButton from "../components/RegularButton";
-import { addItemToCart, createCartItem } from "../utils/cartUtility";
+import { addItemToCart, createCartItem, searchCart } from "../utils/cartUtility";
 import { useState } from "react";
 import { NumberInput } from "../components/NumberInput";
 
@@ -41,13 +41,26 @@ export default function ProductDetails({})
                     value={amount}
                     onChange={(e) => setAmount(+e.target.value < 1 || +e.target.value > 9999 ? 1 : +e.target.value)}
                 />
-                <RegularButton
-                    text={"Add to cart"}
-                    style="primary"
-                    onClick={() => {
-                        setCart(addItemToCart(cart, createCartItem(selectedProduct.data, amount)));
-                    }}
-                />
+                {
+                    searchCart(cart, selectedProduct.data) === -1 &&
+                    <RegularButton
+                        text={"Add to cart"}
+                        style="primary"
+                        onClick={() => {
+                            setCart(addItemToCart(cart, createCartItem(selectedProduct.data, amount)));
+                        }}
+                    />
+                }
+                {
+                    searchCart(cart, selectedProduct.data) > -1 &&
+                    <RegularButton
+                        text={"Remove from cart"}
+                        style="danger"
+                        onClick={() => {
+                            
+                        }}
+                    />
+                }
             </div>
         </>
     )
