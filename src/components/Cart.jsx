@@ -43,13 +43,13 @@ export default function Cart({ closeCart, cart, setCart })
                             text={"Clear cart"}
                             style="danger"
                             onClick={() => {setCart([])}}
-                            classes={[styles["controls-button"]]}
+                            classes={[styles["clear-cart"]]}
                         />
                         <RegularButton
                             text={"Checkout"}
                             style="primary"
                             onClick={() => {}}
-                            classes={[styles["controls-button"]]}
+                            classes={[styles["checkout"]]}
                         />
                     </div>
                 }

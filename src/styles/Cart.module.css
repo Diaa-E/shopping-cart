@@ -51,6 +51,10 @@
     gap: 1rem;
 }
 
-.controls-button{
+.clear-cart{
+    width: 30%;
+}
+
+.checkout{
     width: 100%;
 }
