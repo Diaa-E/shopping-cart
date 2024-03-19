@@ -3,8 +3,9 @@
     align-items: center;
     justify-items: stretch;
     place-content: space-between;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0 0;
     box-shadow: var(--shadow);
+    z-index: 9999;
 }
 
 .footer-info{
