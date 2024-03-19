@@ -46,11 +46,49 @@ function App() {
       }
       <footer className={styles["footer"]}>
         <div className={styles["footer-list"]}>
-          <p className={styles["info"]}>©️ {(new Date()).getFullYear()} Diaa E.</p>
+          <p className={styles["footer-info"]}>©️ {(new Date()).getFullYear()} Diaa E.</p>
           <FooterLink
             icon={appIcons.github}
             text={"Source"}
             to={"https://github.com/Diaa-E/shopping-cart"}
+          />
+        </div>
+        <div className={styles["footer-list"]}>
+          <p className={styles["footer-info"]}>Carter's Online Shop</p>
+          <FooterLink
+            text={"Main Page"}
+            to={"/"}
+          />
+          <FooterLink
+            text={"Shop"}
+            to={"/shop"}
+          />
+          <FooterLink
+            text={"About"}
+            to={"/about"}
+          />
+          <FooterLink
+            text={"Careers"}
+            to={"/"}
+          />
+          <FooterLink
+            text={"Blog"}
+            to={"/"}
+          />
+          <FooterLink
+            text={"Advertise with us"}
+            to={"/"}
+          />
+        </div>
+        <div className={styles["footer-list"]}>
+          <p className={styles["footer-info"]}>Support</p>
+          <FooterLink
+            text={"Product help"}
+            to={"/"}
+          />
+          <FooterLink
+            text={"Report an issue"}
+            to={"/"}
           />
         </div>
       </footer>

@@ -7,6 +7,12 @@
     box-shadow: var(--shadow);
 }
 
+.footer-info{
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+}
+
 .footer{
     background-color: var(--accent);
     color: var(--text);
@@ -20,7 +26,6 @@
 .footer-list{
     display: flex;
     flex-direction: column;
-    gap: .5rem;
     align-items: flex-start;
 }
 
