@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../styles/CartItem.module.css";
 import RegularButton from "./RegularButton";
+import { removeItemFromCart } from "../utils/cartUtility";
 
 export default function CartItem({ item, cart, setCart })
 {
@@ -12,7 +13,7 @@ export default function CartItem({ item, cart, setCart })
             <RegularButton
                 text={"Remove from cart"}
                 style="danger"
-                onClick={() => {}}
+                onClick={() => {setCart(removeItemFromCart(cart, item))}}
             />
         </Link>
     )
