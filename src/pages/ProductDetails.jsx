@@ -3,7 +3,7 @@ import useFetchData from "../hooks/useFetchData";
 import styles from "../styles/ProductDetails.module.css";
 import RegularButton from "../components/RegularButton";
 import { addItemToCart, createCartItem, removeItemFromCart, searchCart } from "../utils/cartUtility";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NumberInput } from "../components/NumberInput";
 import PriceTag from "../components/PriceTag";
 
@@ -14,6 +14,12 @@ export default function ProductDetails({})
     const [amount, setAmount] = useState(1);
     const { productId } = useParams();
     const [selectedProduct, setSelectedProduct] = useState(products.find(item => item.id.toString() === productId.toString()));
+
+    useEffect(() => {
+
+        setSelectedProduct(products.find(item => item.id.toString() === productId.toString()));
+        
+    }, [productId]);
 
     return (
         <>
