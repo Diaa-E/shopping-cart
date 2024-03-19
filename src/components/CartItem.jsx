@@ -3,12 +3,10 @@ import styles from "../styles/CartItem.module.css";
 import RegularButton from "./RegularButton";
 import { addItemToCart, removeItemFromCart } from "../utils/cartUtility";
 import { NumberInput } from "./NumberInput";
-import { useState } from "react";
 import PriceTag from "./PriceTag";
 
 export default function CartItem({ item, cart, setCart })
 {
-
     return (
         <div className={styles["cart-item-container"]}>
             <img className={styles["thumb"]} src={item.image} alt={item.title} />
