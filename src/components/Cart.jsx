@@ -31,6 +31,7 @@ export default function Cart({ closeCart, cart, setCart })
                                     item={item}
                                     cart={cart}
                                     setCart={setCart}
+                                    closeCart={closeCart}
                                 />
                             )
                         })

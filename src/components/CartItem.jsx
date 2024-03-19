@@ -5,12 +5,12 @@ import { addItemToCart, removeItemFromCart } from "../utils/cartUtility";
 import { NumberInput } from "./NumberInput";
 import PriceTag from "./PriceTag";
 
-export default function CartItem({ item, cart, setCart })
+export default function CartItem({ item, cart, setCart, closeCart })
 {
     return (
         <div className={styles["cart-item-container"]}>
             <img className={styles["thumb"]} src={item.image} alt={item.title} />
-            <Link to={"/shop/" + item.id} className={styles["title"]}>{item.title}</Link>
+            <Link onClick={closeCart} to={"/shop/" + item.id} className={styles["title"]}>{item.title}</Link>
             <div className={styles["total"]}>
                 Total:
                 <PriceTag
