@@ -40,7 +40,7 @@
     - ~~Add a search bar and filter products based on keyword~~
 
 1. ### Cart component
-    - Display current items in the cart
+    - ~~Display current items in the cart~~
     - Each item's amount can be adjusted from within the cart
     - each item in the cart has a remove option
     - A remove option triggers a confirmation modal

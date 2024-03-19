@@ -1,0 +1,23 @@
+.cart-item-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 4fr 1fr 1fr;
+    place-items: stretch;
+    place-content: stretch;
+    gap: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+}
+
+.thumb{
+    grid-row-start: 1;
+    grid-row-end: -1;
+    place-self: center;
+}
+
+.title{
+    color: var(--text);
+    font-size: 1.2rem;
+}

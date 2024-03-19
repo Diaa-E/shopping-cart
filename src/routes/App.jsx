@@ -35,6 +35,7 @@ function App() {
         <Cart
           closeCart={() => setOpenCart(false)}
           cart={cart}
+          setCart={setCart}
         />
       }
     </>
