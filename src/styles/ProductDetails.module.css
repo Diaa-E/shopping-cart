@@ -36,3 +36,8 @@
     composes: price-fraction from "./ShopItem.module.css";
     font-size: 1.3rem;
 }
+
+.remove-button{
+    grid-column-start: 1;
+    grid-column-end: -1;
+}

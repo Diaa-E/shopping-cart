@@ -33,29 +33,32 @@ export default function ProductDetails({})
                         </span>
                     </p>
                 </div>
-                <NumberInput
-                    id={"itemAmount"}
-                    name={"item quantity"}
-                    min={1}
-                    max={9999}
-                    value={amount}
-                    onChange={(e) => setAmount(+e.target.value < 1 || +e.target.value > 9999 ? 1 : +e.target.value)}
-                />
                 {
                     searchCart(cart, selectedProduct.data) === -1 &&
-                    <RegularButton
-                        text={"Add to cart"}
-                        style="primary"
-                        onClick={() => {
-                            setCart(addItemToCart(cart, createCartItem(selectedProduct.data, amount)));
-                        }}
-                    />
+                    <>
+                        <NumberInput
+                            id={"itemAmount"}
+                            name={"item quantity"}
+                            min={1}
+                            max={9999}
+                            value={amount}
+                            onChange={(e) => setAmount(+e.target.value < 1 || +e.target.value > 9999 ? 1 : +e.target.value)}
+                        />
+                        <RegularButton
+                            text={"Add to cart"}
+                            style="primary"
+                            onClick={() => {
+                                setCart(addItemToCart(cart, createCartItem(selectedProduct.data, amount)));
+                            }}
+                        />
+                    </>
                 }
                 {
                     searchCart(cart, selectedProduct.data) > -1 &&
                     <RegularButton
                         text={"Remove from cart"}
                         style="danger"
+                        classes={[styles["remove-button"]]}
                         onClick={() => {
                             
                         }}
