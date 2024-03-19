@@ -27,13 +27,11 @@
 }
 
 .price{
-    composes: new-price from "./ShopItem.module.css";
     font-size: 2rem;
     margin: auto 0 0 0;
 }
 
 .price-fraction{
-    composes: price-fraction from "./ShopItem.module.css";
     font-size: 1.3rem;
 }
 

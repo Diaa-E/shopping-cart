@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "../styles/ShopItem.module.css";
 import { formatPrice } from "../utils/formatPrice";
 import { appIcons } from "../data/appIcons.barrel";
+import PriceTag from "./PriceTag";
 
 export default function ShopItem({ image, title, price, id, inCart })
 {
@@ -12,12 +13,9 @@ export default function ShopItem({ image, title, price, id, inCart })
             <img src={image} alt={title + " image"} />
             <h2>{title}</h2>
             <div className={styles["details"]}>
-                <p id="price" className={styles["new-price"]}>
-                    ${splitPrice[0]}
-                    <span id="price-fraction" className={styles["price-fraction"]}>
-                        {splitPrice[1]}
-                    </span>
-                </p>
+            <PriceTag
+                price={price}
+            />
                 {
                     inCart &&
                     <img className={styles["in-cart"]} src={appIcons.cartFull} alt="item is in cart" />

@@ -6,6 +6,7 @@ import RegularButton from "../components/RegularButton";
 import { addItemToCart, createCartItem, removeItemFromCart, searchCart } from "../utils/cartUtility";
 import { useState } from "react";
 import { NumberInput } from "../components/NumberInput";
+import PriceTag from "../components/PriceTag";
 
 export default function ProductDetails({})
 {
@@ -26,12 +27,11 @@ export default function ProductDetails({})
                 <div className={styles["details"]}>
                     <h1>{selectedProduct.data.title}</h1>
                     <p>{selectedProduct.data.description}</p>
-                    <p id="price" className={styles["price"]}>
-                        ${splitPrice[0]}
-                        <span id="price-fraction" className={styles["price-fraction"]}>
-                            {splitPrice[1]}
-                        </span>
-                    </p>
+                    <PriceTag
+                        price={selectedProduct.data.price}
+                        wholeClasses={[styles["price"]]}
+                        fractionClasses={[styles["price-fraction"]]}
+                    />
                 </div>
                 {
                     searchCart(cart, selectedProduct.data) === -1 &&
