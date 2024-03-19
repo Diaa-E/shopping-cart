@@ -1,0 +1,9 @@
+.icon-button{
+    background-color: var(--none);
+    cursor: pointer;
+}
+
+.icon-button>img{
+    height: 40px;
+    cursor: inherit;
+}

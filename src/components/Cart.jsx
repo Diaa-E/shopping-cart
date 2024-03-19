@@ -1,5 +1,7 @@
+import { appIcons } from "../data/appIcons.barrel";
 import styles from "../styles/Cart.module.css";
 import CartItem from "./CartItem";
+import IconButton from "./IconButton";
 import PriceTag from "./PriceTag";
 import RegularButton from "./RegularButton";
 
@@ -13,6 +15,12 @@ export default function Cart({ closeCart, cart, setCart })
             <div onClick={e => e.stopPropagation()} className={styles["cart-container"]}>
                 <div className={styles["header"]}>
                     <h1 className={styles["title"]}>Shopping Cart {`(${cart.length})`}</h1>
+                    <IconButton
+                        icon={appIcons.close}
+                        id={"closeCart"}
+                        text={"Close cart"}
+                        onClick={closeCart}
+                    />
                 </div>
                 <div className={styles["cart-items"]}>
                 {
