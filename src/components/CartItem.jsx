@@ -4,6 +4,7 @@ import RegularButton from "./RegularButton";
 import { addItemToCart, removeItemFromCart } from "../utils/cartUtility";
 import { NumberInput } from "./NumberInput";
 import { useState } from "react";
+import PriceTag from "./PriceTag";
 
 export default function CartItem({ item, cart, setCart })
 {
@@ -12,7 +13,9 @@ export default function CartItem({ item, cart, setCart })
         <div className={styles["cart-item-container"]}>
             <img className={styles["thumb"]} src={item.image} alt={item.title} />
             <Link to={"/shop/" + item.id} className={styles["title"]}>{item.title}</Link>
-            <p>${+item.price * +item.amount}</p>
+            <PriceTag
+                price={+item.price * +item.amount}
+            />
             <NumberInput
                 id={"orderAmount"}
                 max={9999}
