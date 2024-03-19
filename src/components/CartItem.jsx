@@ -18,7 +18,7 @@ export default function CartItem({ item, cart, setCart })
                 />
             </div>
             <NumberInput
-                id={"orderAmount"}
+                id={"orderAmount" + item.id}
                 max={9999}
                 min={1}
                 name={"Item quantity"}
