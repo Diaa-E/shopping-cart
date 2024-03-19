@@ -1,6 +1,6 @@
 .search-bar{
     composes: select-input from "./SelectInput.module.css";
-    cursor: text;
+    cursor: text !important;
 }
 
 .search-bar::placeholder{
