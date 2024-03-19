@@ -11,9 +11,12 @@ export default function CartItem({ item, cart, setCart })
         <div className={styles["cart-item-container"]}>
             <img className={styles["thumb"]} src={item.image} alt={item.title} />
             <Link to={"/shop/" + item.id} className={styles["title"]}>{item.title}</Link>
-            <PriceTag
-                price={+item.price * +item.amount}
-            />
+            <div className={styles["total"]}>
+                Total:
+                <PriceTag
+                    price={+item.price * +item.amount}
+                />
+            </div>
             <NumberInput
                 id={"orderAmount"}
                 max={9999}
