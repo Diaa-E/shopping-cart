@@ -35,3 +35,33 @@
     width: 50%;
     place-self: flex-start;
 }
+
+.promo{
+    padding: 2rem;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-secondary);
+}
+
+.promo h3{
+    font-size: 2rem;
+}
+
+.promo h2{
+    color: var(--accent);
+    font-size: 3rem;
+}
+
+.promo>img{
+    width: 50%;
+    height: auto;
+    place-self: center;
+}
+
+.promo-text{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
