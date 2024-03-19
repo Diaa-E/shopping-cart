@@ -47,3 +47,9 @@
     cursor: inherit;
     font-size: 1rem;
 }
+
+.in-cart{
+    cursor: inherit;
+    filter: var(--filter-accent);
+    height: 2rem;
+}

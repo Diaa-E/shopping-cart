@@ -8,9 +8,12 @@ import SelectInput from "../components/SelectInput";
 import { filterProducts } from "../utils/filterProducts";
 import { sortByPrice, sortByTitle } from "../utils/productSorter";
 import SearchBar from "../components/SearchBar";
+import { searchCart } from "../utils/cartUtility";
+import { useOutletContext } from "react-router-dom";
 
 export default function Shop({})
 {
+    const [cart, setCart] = useOutletContext().cart;
     const products = useFetchData({url: 'https://fakestoreapi.com/products', method: "GET"});
     const categories = products.data ? extractCategories(products.data) : [];
     const [selectedCat, setSelectedCat] = useState("");
@@ -106,6 +109,7 @@ export default function Shop({})
                                 image={item.image}
                                 price={item.price}
                                 id={item.id}
+                                inCart={searchCart(cart, item) > -1}
                              />
                 })
             }
