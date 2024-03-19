@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { addItemToCart, createCartItem, findInCart } from "../cartUtility";
+import { addItemToCart, createCartItem, findInCart, removeItemFromCart } from "../cartUtility";
 
 describe("createCartItem utility function", () => {
 
@@ -25,4 +25,22 @@ describe("addItemToCart utility function", () => {
 
         expect(addItemToCart([{id: "1", amount: 12}], {id: "1", amount: 3})).toEqual([{id: "1", amount: 3}]);
     }); 
+});
+
+describe("removeItemFromCart utility function", () => {
+
+    it("Removes item from an array with only 1 element", () => {
+
+        expect(removeItemFromCart([{id: "2"}], {id: "2"})).toEqual([]);
+    })
+
+    it("Removes item from an array with more than one element", () => {
+
+        expect(removeItemFromCart([{id: "1"}, {id: "2"}, {id: "3"}], {id: "2"})).toEqual([{id: "1"}, {id: "3"}]);
+    });
+
+    it("Returns array unchanged if no id is matched", () => {
+
+        expect(removeItemFromCart([{id: "1"}, {id: "2"}], {id: "3"})).toEqual([{id: "1"}, {id: "2"}]);
+    });
 });
