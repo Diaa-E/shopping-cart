@@ -6,6 +6,13 @@ export function createCartItem(product, amount)
     }
 }
 
+export function removeItemFromCart(cart, item)
+{
+    const updatedCart = [...cart];
+
+    return updatedCart.filter(cartItem => cartItem.id !== item.id);
+}
+
 export function addItemToCart(cart, item)
 {
     const updatedCart = [...cart];
