@@ -1,5 +1,4 @@
 import { useOutletContext, useParams } from "react-router-dom";
-import useFetchData from "../hooks/useFetchData";
 import styles from "../styles/ProductDetails.module.css";
 import RegularButton from "../components/RegularButton";
 import { addItemToCart, createCartItem, removeItemFromCart, searchCart } from "../utils/cartUtility";
@@ -18,7 +17,7 @@ export default function ProductDetails({})
     useEffect(() => {
 
         setSelectedProduct(products.find(item => item.id.toString() === productId.toString()));
-        
+
     }, [productId]);
 
     return (
