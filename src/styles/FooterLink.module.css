@@ -1,0 +1,13 @@
+.footer-link{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text);
+    text-decoration: underline;
+}
+
+.footer-link>img{
+    cursor: inherit;
+    height: 20px;
+}

@@ -74,7 +74,7 @@
 1. ### Page components (finalized)
     - About
     - Home
-    - Product details
+    - ~~Product details~~
 
 1. ### Dark mode
 
