@@ -138,6 +138,17 @@ function App() {
             to={"/"}
           />
         </div>
+        <div className={styles["footer-list"]}>
+          <p className={styles["footer-info"]}>About</p>
+          <FooterLink
+            text={"Company"}
+            to={"/"}
+          />
+          <FooterLink
+            text={"Contact us"}
+            to={"/"}
+          />
+        </div>
       </footer>
     </>
   )
