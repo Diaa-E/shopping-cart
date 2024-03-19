@@ -94,6 +94,25 @@ function App() {
           />
         </div>
         <div className={styles["footer-list"]}>
+          <p className={styles["footer-info"]}>Special Offers</p>
+          <FooterLink
+            text={"Flash sale"}
+            to={"/"}
+          />
+          <FooterLink
+            text={"Daily offers"}
+            to={"/"}
+          />
+          <FooterLink
+            text={"Find deals"}
+            to={"/"}
+          />
+          <FooterLink
+            text={"Loyalty points"}
+            to={"/"}
+          />
+        </div>
+        <div className={styles["footer-list"]}>
           <p className={styles["footer-info"]}>Support</p>
           <FooterLink
             text={"Product help"}
