@@ -54,12 +54,12 @@
     - ~~Add option to set amount by typing~~
     - ~~Add dials to fine tune amount~~
 
-1. ### Small components
+1. ### Small components ✅
     - ~~Regular buttons (primary, secondary, danger)~~
     - ~~Icon buttons~~
     - ~~Cart button~~
     - ~~Nav links~~
-    - Footer links
+    - ~~Footer links~~
     - ~~Search bar~~
     - ~~Select input~~
     - ~~Number input~~
@@ -68,7 +68,7 @@
 1. ### Landmark components
     - ~~Navigation bar~~
     - ~~logo/home link~~
-    - Footer
+    - ~~Footer~~
     - Modal
 
 1. ### Page components (finalized)
