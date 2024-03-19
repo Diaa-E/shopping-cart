@@ -9,9 +9,9 @@ export default function CartItem({ item, cart, setCart })
 {
 
     return (
-        <Link to={"/shop/" + item.id} className={styles["cart-item-container"]}>
+        <div className={styles["cart-item-container"]}>
             <img className={styles["thumb"]} src={item.image} alt={item.title} />
-            <h2 className={styles["title"]}>{item.title}</h2>
+            <Link to={"/shop/" + item.id} className={styles["title"]}>{item.title}</Link>
             <p>${+item.price * +item.amount}</p>
             <NumberInput
                 id={"orderAmount"}
@@ -28,6 +28,6 @@ export default function CartItem({ item, cart, setCart })
                 style="danger"
                 onClick={() => {setCart(removeItemFromCart(cart, item))}}
             />
-        </Link>
+        </div>
     )
 }

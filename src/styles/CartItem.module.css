@@ -20,4 +20,6 @@
 .title{
     color: var(--text);
     font-size: 1.2rem;
+    place-self: flex-start;
+    cursor: pointer;
 }
