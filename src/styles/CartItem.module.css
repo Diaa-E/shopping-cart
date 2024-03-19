@@ -13,7 +13,7 @@
 
 .thumb{
     grid-row-start: 1;
-    grid-row-end: -1;
+    grid-row-end: -2;
     place-self: center;
 }
 
