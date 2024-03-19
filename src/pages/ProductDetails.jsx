@@ -1,7 +1,6 @@
 import { useOutletContext, useParams } from "react-router-dom";
 import useFetchData from "../hooks/useFetchData";
 import styles from "../styles/ProductDetails.module.css";
-import { formatPrice } from "../utils/formatPrice";
 import RegularButton from "../components/RegularButton";
 import { addItemToCart, createCartItem, removeItemFromCart, searchCart } from "../utils/cartUtility";
 import { useState } from "react";
