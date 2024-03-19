@@ -54,6 +54,19 @@ function App() {
           />
         </div>
         <div className={styles["footer-list"]}>
+          <p className={styles["footer-info"]}>Social media</p>
+          <FooterLink
+            icon={appIcons.facebook}
+            text={"Facebook"}
+            to={"https://facebook.com"}
+          />
+          <FooterLink
+            icon={appIcons.x}
+            text={"X / Twitter"}
+            to={"https://twitter.com"}
+          />
+        </div>
+        <div className={styles["footer-list"]}>
           <p className={styles["footer-info"]}>Carter's Online Shop</p>
           <FooterLink
             text={"Main Page"}
