@@ -4,8 +4,11 @@ import CartItem from "./CartItem";
 export default function Cart({ closeCart, cart })
 {
     return (
-        <div onClick={closeCart} className={styles["cart-overlay"]}>
-            <div className={styles["cart-container"]}>
+        <div 
+            onClick={() => closeCart}
+            className={styles["cart-overlay"]}
+        >
+            <div onClick={e => e.stopPropagation()} className={styles["cart-container"]}>
                 <div className={styles["header"]}>
                     <h1>Shopping Cart</h1>
                 </div>
@@ -20,7 +23,7 @@ export default function Cart({ closeCart, cart })
                         cart.map(item => {
 
                             return (
-                                
+
                                 <CartItem
                                 
                                 />
