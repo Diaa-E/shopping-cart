@@ -113,6 +113,21 @@ function App() {
           />
         </div>
         <div className={styles["footer-list"]}>
+          <p className={styles["footer-info"]}>Legal</p>
+          <FooterLink
+            text={"Terms of service"}
+            to={"/"}
+          />
+          <FooterLink
+            text={"Privacy policy"}
+            to={"/"}
+          />  
+          <FooterLink
+            text={"Refund policy"}
+            to={"/"}
+          />        
+        </div>
+        <div className={styles["footer-list"]}>
           <p className={styles["footer-info"]}>Support</p>
           <FooterLink
             text={"Product help"}
