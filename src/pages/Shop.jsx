@@ -9,10 +9,11 @@ import { filterProducts } from "../utils/filterProducts";
 import { sortByPrice, sortByTitle } from "../utils/productSorter";
 import SearchBar from "../components/SearchBar";
 import { searchCart } from "../utils/cartUtility";
-import { useOutletContext } from "react-router-dom";
+import { Outlet, useOutletContext, useParams } from "react-router-dom";
 
 export default function Shop({})
 {
+    const { productId } = useParams();
     const [cart, setCart] = useOutletContext().cart;
     const products = useFetchData({url: 'https://fakestoreapi.com/products', method: "GET"});
     const categories = products.data ? extractCategories(products.data) : [];
@@ -50,6 +51,8 @@ export default function Shop({})
     if (products.loading) return <h1>Loading...</h1>
 
     if (products.error) return <h1>Error</h1>
+
+    if (productId) return <Outlet context={{cart: [cart, setCart], products: products.data}}/>
 
     return (
         <>

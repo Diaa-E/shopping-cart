@@ -25,11 +25,13 @@ export default function Router({ })
                 {
                     path: "shop",
                     element: <Shop />,
+                    children: [
+                        {
+                            path: ":productId",
+                            element: <ProductDetails />,
+                        }
+                    ]
                 },
-                {
-                    path: "shop/:productId",
-                    element: <ProductDetails />,
-                }
             ]
         },
     ]);
