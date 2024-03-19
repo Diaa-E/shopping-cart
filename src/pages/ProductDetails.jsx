@@ -14,7 +14,6 @@ export default function ProductDetails({})
     const [amount, setAmount] = useState(1);
     const { productId } = useParams();
     const selectedProduct = useFetchData({ url: `https://fakestoreapi.com/products/${productId}`, method: "GET"});
-    const splitPrice = selectedProduct.data ? formatPrice(selectedProduct.data.price) : [];
 
     if (selectedProduct.loading) return <h1>Loading...</h1>
 
