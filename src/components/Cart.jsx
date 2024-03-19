@@ -10,7 +10,7 @@ export default function Cart({ closeCart, cart, setCart })
         >
             <div onClick={e => e.stopPropagation()} className={styles["cart-container"]}>
                 <div className={styles["header"]}>
-                    <h1 className={styles["title"]}>Shopping Cart</h1>
+                    <h1 className={styles["title"]}>Shopping Cart {`(${cart.length})`}</h1>
                 </div>
                 <div className={styles["cart-items"]}>
                 {
