@@ -3,7 +3,7 @@ import useFetchData from "../hooks/useFetchData";
 import styles from "../styles/ProductDetails.module.css";
 import { formatPrice } from "../utils/formatPrice";
 import RegularButton from "../components/RegularButton";
-import { addItemToCart, createCartItem, searchCart } from "../utils/cartUtility";
+import { addItemToCart, createCartItem, removeItemFromCart, searchCart } from "../utils/cartUtility";
 import { useState } from "react";
 import { NumberInput } from "../components/NumberInput";
 
@@ -60,7 +60,7 @@ export default function ProductDetails({})
                         style="danger"
                         classes={[styles["remove-button"]]}
                         onClick={() => {
-                            
+                            setCart(removeItemFromCart(cart, selectedProduct.data));
                         }}
                     />
                 }
