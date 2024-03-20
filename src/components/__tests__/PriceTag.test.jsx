@@ -27,5 +27,21 @@ describe("PriceTage component", () => {
         const priceFractionElement = container.querySelector("span#priceFraction");
 
         expect(priceFractionElement.textContent).toBe("56");
-    })
+    });
+
+    it("Add whole classes to price tag", () => {
+
+        const { container } = setup(<PriceTag price={"23.56"} wholeClasses={["testClass"]}/>);
+        const priceElement = container.querySelector("#price");
+
+        expect(priceElement.classList).toContain("testClass");
+    });
+
+    it("Adds fraction classes to span element", () => {
+
+        const { container } = setup(<PriceTag price={"23.56"} fractionClasses={["testClass"]}/>);
+        const priceFractionElement = container.querySelector("span#priceFraction");
+
+        expect(priceFractionElement.classList).toContain("testClass");
+    });
 });
