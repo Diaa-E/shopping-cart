@@ -6,9 +6,9 @@ import PriceTag from "./PriceTag";
 export default function ShopItem({ image, title, price, id, inCart })
 {
     return (
-        <Link to={"/shop/" + id} className={styles["shop-item"]}>
-            <img src={image} alt={title + " image"} />
-            <h2>{title}</h2>
+        <Link id={"shopItem" + id} to={"/shop/" + id} className={styles["shop-item"]}>
+            <img id="shopItemThumb" src={image} alt={title + " image"} />
+            <h2 id="shopItemTitle">{title}</h2>
             <div className={styles["details"]}>
             <PriceTag
                 price={price}
