@@ -1,5 +1,6 @@
 import { appIcons } from "../data/appIcons.barrel";
 import styles from "../styles/Cart.module.css";
+import { getSubtotal } from "../utils/subtotal";
 import CartItem from "./CartItem";
 import IconButton from "./IconButton";
 import PriceTag from "./PriceTag";
@@ -53,7 +54,7 @@ export default function Cart({ closeCart, cart, setCart })
                         <h3 id="subtotal" className={styles["subtotal"]}>
                             Subtotal:
                             <PriceTag
-                                price={cart.reduce((total, current) => total + +(+current.price).toFixed(2) * +current.amount, 0)}
+                                price={getSubtotal(cart)}
                             />
                         </h3>
                         <div className={styles["cart-controls"]}>
