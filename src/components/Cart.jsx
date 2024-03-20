@@ -9,12 +9,13 @@ export default function Cart({ closeCart, cart, setCart })
 {
     return (
         <div 
+            id="cartBackdrop"
             onClick={closeCart}
-            className={styles["cart-overlay"]}
+            className={styles["cart-backdrop"]}
         >
-            <div onClick={e => e.stopPropagation()} className={styles["cart-container"]}>
-                <div className={styles["header"]}>
-                    <h1 className={styles["title"]}>Shopping Cart {`(${cart.length})`}</h1>
+            <div id="cart" onClick={e => e.stopPropagation()} className={styles["cart-container"]}>
+                <div id="cartHeader" className={styles["header"]}>
+                    <h1 id="cartTitle" className={styles["title"]}>Shopping Cart {`(${cart.length})`}</h1>
                     <IconButton
                         icon={appIcons.close}
                         id={"closeCart"}
@@ -22,10 +23,10 @@ export default function Cart({ closeCart, cart, setCart })
                         onClick={closeCart}
                     />
                 </div>
-                <div className={styles["cart-items"]}>
+                <div id="cartItems" className={styles["cart-items"]}>
                 {
                     cart.length === 0 &&
-                    <h2 className={styles["empty"]}>Cart is empty.</h2>
+                    <h2 id="emptyCart" className={styles["empty"]}>Cart is empty.</h2>
                 }
                 {
                     cart.length > 0 &&
@@ -49,10 +50,10 @@ export default function Cart({ closeCart, cart, setCart })
                 {
                     cart.length > 0 &&
                     <>
-                        <h3 className={styles["subtotal"]}>
+                        <h3 id="subtotal" className={styles["subtotal"]}>
                             Subtotal:
                             <PriceTag
-                                price={cart.reduce((total, current) => total + +current.price.toFixed(2) * +current.amount, 0)}
+                                price={cart.reduce((total, current) => total + +(+current.price).toFixed(2) * +current.amount, 0)}
                             />
                         </h3>
                         <div className={styles["cart-controls"]}>
@@ -61,12 +62,14 @@ export default function Cart({ closeCart, cart, setCart })
                                 style="danger"
                                 onClick={() => {setCart([])}}
                                 classes={[styles["clear-cart"]]}
+                                id={"clearCartButton"}
                             />
                             <RegularButton
                                 text={"Checkout"}
                                 style="primary"
                                 onClick={() => {}}
                                 classes={[styles["checkout"]]}
+                                id={"checkoutButton"}
                             />
                         </div>
                     </>
