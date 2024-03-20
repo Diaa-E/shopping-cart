@@ -10,8 +10,8 @@ export default function CartItem({ item, cart, setCart, closeCart })
     return (
         <div className={styles["cart-item-container"]}>
             <img className={styles["thumb"]} src={item.image} alt={item.title} />
-            <Link onClick={closeCart} to={"/shop/" + item.id} className={styles["title"]}>{item.title}</Link>
-            <div className={styles["total"]}>
+            <Link id="itemTitle" onClick={closeCart} to={"/shop/" + item.id} className={styles["title"]}>{item.title}</Link>
+            <div id="itemTotalCost" className={styles["total"]}>
                 Total:
                 <PriceTag
                     price={+item.price * +item.amount}
@@ -28,6 +28,7 @@ export default function CartItem({ item, cart, setCart, closeCart })
                 }}
             />
             <RegularButton
+                id={"removeItemButton"}
                 text={"Remove from cart"}
                 style="danger"
                 onClick={() => {setCart(removeItemFromCart(cart, item))}}
