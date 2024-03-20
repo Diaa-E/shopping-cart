@@ -71,8 +71,8 @@
     - ~~Footer~~
     - Modal
 
-1. ### Page components (finalized)
-    - About
+1. ### Page components (finalized) ✅
+    - ~~About~~
     - ~~Home~~
     - ~~Product details~~
 
