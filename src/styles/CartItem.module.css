@@ -1,14 +1,14 @@
 .cart-item-container{
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
     place-items: stretch;
     place-content: stretch;
     gap: 1rem;
     border-radius: 1rem;
     box-shadow: var(--shadow);
     background-color: var(--bg-secondary);
-    padding: 1rem;
+    padding: 3rem;
 }
 
 .thumb{
@@ -29,4 +29,13 @@
     display: flex;
     gap: 1rem;
     margin: auto 0 0 0;
+}
+
+@media (min-width: 700px) {
+    
+    .cart-item-container{
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(3, min-content);
+        padding: 1rem;
+    }
 }
