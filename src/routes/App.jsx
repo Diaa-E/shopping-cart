@@ -17,6 +17,13 @@ function App() {
 
   const [cart, setCart] = useState([]);
   const [openCart, setOpenCart] = useState(false);
+  const [lockScroll, setLockScroll] = useState(false);
+
+  useEffect(() => {
+
+    document.body.style.overflow = lockScroll ? "hidden" : "visible"
+
+  }, [lockScroll]);
 
   useEffect(() => {
 
@@ -32,14 +39,20 @@ function App() {
         <NavBar />
         <CartButton
           cartLength={cart.length}
-          onClick={() => setOpenCart(true)}
+          onClick={() => {
+            setOpenCart(true);
+            setLockScroll(true);
+          }}
         />
       </header>
       <Outlet context={{cart: [cart, setCart]}} />
       {
         openCart &&
         <Cart
-          closeCart={() => setOpenCart(false)}
+          closeCart={() => {
+            setOpenCart(false);
+            setLockScroll(false);
+          }}
           cart={cart}
           setCart={setCart}
         />
