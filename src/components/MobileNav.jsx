@@ -11,8 +11,8 @@ export default function MobileNav({ setLockScroll })
     useEffect(() => {
 
         open ? setLockScroll(true) : setLockScroll(false);
-        
-    }, [open])
+
+    }, [open]);
 
     return (
         <>
