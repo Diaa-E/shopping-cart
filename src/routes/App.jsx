@@ -86,10 +86,24 @@ function App() {
   return (
     <>
       <header className={styles.header}>
-        <Link to={"/"}>
-          <img className={styles["logo"]} src={logo} alt="Carter's online shop logo" />
-        </Link>
-        <NavBar />
+        {
+          mobileMode &&
+          <>
+            <NavBar mobileMode={mobileMode} />
+            <Link to={"/"}>
+              <img className={styles["logo"]} src={logo} alt="Carter's online shop logo" />
+            </Link>
+          </>
+        }
+        {
+          !mobileMode &&
+          <>
+              <Link to={"/"}>
+                <img className={styles["logo"]} src={logo} alt="Carter's online shop logo" />
+              </Link>
+              <NavBar mobileMode={mobileMode} />
+          </>
+        }
         <CartButton
           cartLength={cart.length}
           onClick={() => {

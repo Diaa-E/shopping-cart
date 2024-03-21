@@ -2,7 +2,7 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 import styles from "../styles/NavBar.module.css";
 
-export default function NavBar({})
+export default function NavBar({ mobileMode })
 {
     return (
         <nav>
