@@ -1,9 +1,12 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
 
 import styles from "../styles/NavBar.module.css";
+import MobileNav from "./MobileNav";
 
 export default function NavBar({ mobileMode })
 {
+    if (mobileMode) return <MobileNav />
+
     return (
         <nav>
             <ul className={styles["nav-container"]}>

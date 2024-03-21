@@ -1,0 +1,43 @@
+.nav-backdrop{
+    composes: cart-backdrop from "./Cart.module.css";
+    z-index: 9999;
+}
+
+.nav-container{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-secondary);
+    height: 100%;
+    width: 100%;
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+    gap: 3rem;
+}
+
+.nav-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    align-content: center;
+}
+
+.nav-title{
+    font-size: 2rem;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item{
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.active{
+    background-color: var(--accent);
+}
