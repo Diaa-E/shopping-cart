@@ -22,6 +22,21 @@ function App() {
   const [openCart, setOpenCart] = useState(false);
   const [lockScroll, setLockScroll] = useState(false);
   const [modalState, setModalState] = useState({open: false, prompt: "", actionText: "", onConfirm: () => {}});
+  const [mobileMode, setMobileMode] = useState(window.innerWidth <= 700);
+
+  useEffect(() => {
+
+    window.addEventListener("resize", () => {
+
+      setMobileMode(window.innerWidth <= 700);
+    });
+
+    return () => {
+
+      removeEventListener("resize", window);
+    }
+
+  }, []);
 
   useEffect(() => {
 
@@ -83,7 +98,7 @@ function App() {
           }}
         />
       </header>
-      <Outlet context={{cart: [cart, setCart]}} />
+      <Outlet context={{cart: [cart, setCart], mobileMode: [mobileMode]}} />
       {
         openCart &&
         <ModalContext.Provider value={[openModal]}>

@@ -4,9 +4,12 @@ import shoppingImage from "../assets/images/shopping.jpg";
 import saveImage from "../assets/images/save.jpg";
 import greenImage from "../assets/images/green.png";
 import dealsImage from "../assets/images/deals.jpg";
+import { useOutletContext } from "react-router-dom";
 
 export default function Home({})
 {
+    const [mobileMode] = useOutletContext().mobileMode;
+
     return (
         <>
             <div className={styles["hero"]}>
@@ -43,10 +46,16 @@ export default function Home({})
                         onClick={() => {}}
                     />
                 </div>
-                <img src={shoppingImage} alt="shopping made fun" />
+                {
+                    !mobileMode &&
+                    <img src={shoppingImage} alt="shopping made fun" />
+                }
             </div>
             <div className={styles["promo"]}>
-                <img src={saveImage} alt="save monet" />
+                {
+                    !mobileMode &&
+                    <img src={saveImage} alt="save money" />
+                }
                 <div className={styles["promo-text"]}>
                     <h2>Lorem ipsum dolor, sit amet consectetur!</h2>
                     <h3>Lorem ipsum dolor sit
@@ -79,10 +88,16 @@ export default function Home({})
                         classes={[styles["call-to-action"]]}
                     />
                 </div>
-                <img src={greenImage} alt="save the planet" />
+                {
+                    !mobileMode &&
+                    <img src={greenImage} alt="save the planet" />
+                }
             </div>
             <div className={styles["promo"]}>
-                <img src={dealsImage} alt="Find deals" />
+                {
+                    !mobileMode &&
+                    <img src={dealsImage} alt="Find deals" />
+                }
                 <div className={styles["promo-text"]}>
                     <h2>Lorem ipsum dolor, sit amet consectetur!</h2>
                     <h3>Lorem ipsum dolor sit

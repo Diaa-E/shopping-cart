@@ -1,7 +1,7 @@
 .hero{
     background-image: url("../assets/images/hero.jpg");
     width: 100%;
-    height: 900px;
+    height: 700px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -10,7 +10,7 @@
 
 .hero-banner{
     background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.741), rgba(0, 0, 0, 0.541), var(--none));
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -64,4 +64,16 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+@media (min-width: 700px) {
+    
+    .hero{
+        width: 100%;
+        height: 900px;
+    }
+
+    .hero-banner{
+        width: 50%;
+    }
 }
