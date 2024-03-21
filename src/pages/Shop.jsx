@@ -11,6 +11,7 @@ import SearchBar from "../components/SearchBar";
 import { searchCart } from "../utils/cartUtility";
 import { Outlet, useOutletContext, useParams } from "react-router-dom";
 import Loading from "../components/Loading";
+import FetchError from "../components/FetchError";
 
 export default function Shop({})
 {
@@ -51,7 +52,7 @@ export default function Shop({})
 
     if (products.loading) return <Loading/>
 
-    if (products.error) return <h1>Error</h1>
+    if (products.error) return <FetchError errorMessage={products.error.message} />
 
     if (productId) return <Outlet context={{cart: [cart, setCart], products: products.data}}/>
 
