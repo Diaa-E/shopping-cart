@@ -18,7 +18,7 @@ export const ModalContext = createContext(null);
 
 function App() {
 
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(fetchFromSession("cart", []));
   const [openCart, setOpenCart] = useState(false);
   const [lockScroll, setLockScroll] = useState(false);
   const [modalState, setModalState] = useState({open: false, prompt: "", actionText: "", onConfirm: () => {}});
@@ -38,7 +38,25 @@ function App() {
   useEffect(() => {
 
     document.body.classList.add(theme.light);
-  })
+  });
+
+  useEffect(() => {
+
+    saveToSession("cart", cart);
+
+  }, [cart]);
+
+  function fetchFromSession(key, defaultValue)
+  {
+    if (sessionStorage[key]) return JSON.parse(sessionStorage[key]);
+
+    return defaultValue;
+  }
+
+  function saveToSession(key, rawData)
+  {
+    sessionStorage.setItem(key, JSON.stringify(rawData));
+  }
 
   function closeModal()
   {
