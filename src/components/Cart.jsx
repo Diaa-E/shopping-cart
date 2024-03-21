@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { appIcons } from "../data/appIcons.barrel";
 import styles from "../styles/Cart.module.css";
 import { getSubtotal } from "../utils/subtotal";
@@ -5,9 +6,12 @@ import CartItem from "./CartItem";
 import IconButton from "./IconButton";
 import PriceTag from "./PriceTag";
 import RegularButton from "./RegularButton";
+import { ModalContext } from "../routes/App";
 
 export default function Cart({ closeCart, cart, setCart })
 {
+    const [openModal] = useContext(ModalContext);
+
     return (
         <div 
             id="cartBackdrop"
@@ -61,7 +65,13 @@ export default function Cart({ closeCart, cart, setCart })
                             <RegularButton
                                 text={"Clear cart"}
                                 style="danger"
-                                onClick={() => {setCart([])}}
+                                onClick={() => {
+                                    openModal(
+                                        "Are you sure you want to clear all items from cart?",
+                                        "Clear cart",
+                                        () => setCart([])
+                                    );
+                                }}
                                 classes={[styles["clear-cart"]]}
                                 id={"clearCartButton"}
                             />

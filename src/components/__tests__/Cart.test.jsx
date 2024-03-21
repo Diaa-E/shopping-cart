@@ -131,7 +131,7 @@ describe("Cart component", () => {
         expect(clearCartButton.textContent.toLowerCase()).toContain("clear");
     });
 
-    it("Sets cart to an empty array when clear cart button is clicked", async () => {
+    it("Opens modal when clear cart button is clicked", async () => {
 
         const openModal = vi.fn();
         const setCart = vi.fn().mockImplementation((cart) => cart);
@@ -139,7 +139,6 @@ describe("Cart component", () => {
         const clearCartButton = container.querySelector("button#clearCartButton");
         await user.click(clearCartButton);
 
-        expect(setCart).toHaveBeenCalledOnce();
-        expect(setCart).toHaveReturnedWith([]);
+        expect(openModal).toHaveBeenCalledOnce();
     });
 });
