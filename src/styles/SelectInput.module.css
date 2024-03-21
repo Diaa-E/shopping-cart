@@ -3,7 +3,7 @@
     border-radius: 2rem;
     background-color: var(--bg-primary);
     border: solid var(--text) 1px;
-    width: 31%;
+    width: 100%;
     cursor: pointer;
     transition-duration: .3s;
 }
@@ -13,4 +13,11 @@
     outline-color: var(--accent);
     background-color: var(--bg-secondary);
     box-shadow: var(--shadow);
+}
+
+@media (min-width: 700px) {
+    
+    .select-input{
+        width: 31%;
+    }
 }
