@@ -10,6 +10,7 @@ import { sortByPrice, sortByTitle } from "../utils/productSorter";
 import SearchBar from "../components/SearchBar";
 import { searchCart } from "../utils/cartUtility";
 import { Outlet, useOutletContext, useParams } from "react-router-dom";
+import Loading from "../components/Loading";
 
 export default function Shop({})
 {
@@ -48,7 +49,7 @@ export default function Shop({})
 
     }, [selectedCat, sortMode]);
 
-    if (products.loading) return <h1>Loading...</h1>
+    if (products.loading) return <Loading/>
 
     if (products.error) return <h1>Error</h1>
 
