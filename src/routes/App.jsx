@@ -21,7 +21,13 @@ function App() {
   const [cart, setCart] = useState([]);
   const [openCart, setOpenCart] = useState(false);
   const [lockScroll, setLockScroll] = useState(false);
-  const [modalState, setModalState] = useState({open: false, prompt: "", actionText: "", onConfirm: () => {}})
+  const [modalState, setModalState] = useState({open: false, prompt: "", actionText: "", onConfirm: () => {}});
+
+  useEffect(() => {
+
+    modalState.open || openCart ? setLockScroll(true) : setLockScroll(false);
+
+  }, [modalState]);
 
   useEffect(() => {
 
