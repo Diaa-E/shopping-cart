@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 import NavBar from '../components/NavBar';
 
@@ -13,6 +13,8 @@ import logo from "../assets/images/logo.svg";
 import FooterLink from '../components/FooterLink';
 import { appIcons } from '../data/appIcons.barrel';
 import Modal from '../components/Modal';
+
+export const ModalContext = createContext(null);
 
 function App() {
 
@@ -60,14 +62,16 @@ function App() {
       <Outlet context={{cart: [cart, setCart]}} />
       {
         openCart &&
-        <Cart
-          closeCart={() => {
-            setOpenCart(false);
-            setLockScroll(false);
-          }}
-          cart={cart}
-          setCart={setCart}
-        />
+        <ModalContext.Provider value={[openModal]}>
+          <Cart
+              closeCart={() => {
+                setOpenCart(false);
+                setLockScroll(false);
+              }}
+              cart={cart}
+              setCart={setCart}
+          />
+        </ModalContext.Provider>
       }
       <footer className={styles["footer"]}>
         <div className={styles["footer-list"]}>

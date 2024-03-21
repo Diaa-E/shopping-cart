@@ -4,9 +4,13 @@ import RegularButton from "./RegularButton";
 import { addItemToCart, removeItemFromCart } from "../utils/cartUtility";
 import { NumberInput } from "./NumberInput";
 import PriceTag from "./PriceTag";
+import { ModalContext } from "../routes/App";
+import { useContext } from "react";
 
 export default function CartItem({ item, cart, setCart, closeCart })
 {
+    const [openModal] = useContext(ModalContext);
+
     return (
         <div className={styles["cart-item-container"]}>
             <img className={styles["thumb"]} src={item.image} alt={item.title} />
@@ -31,7 +35,13 @@ export default function CartItem({ item, cart, setCart, closeCart })
                 id={"removeItemButton"}
                 text={"Remove from cart"}
                 style="danger"
-                onClick={() => {setCart(removeItemFromCart(cart, item))}}
+                onClick={() => {
+                    openModal(
+                        `Are you sure you want to remove "${item.title}" from cart?`,
+                        "Remove item",
+                        () => { setCart(removeItemFromCart(cart, item)) }
+                    )
+                }}
             />
         </div>
     )

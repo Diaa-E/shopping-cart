@@ -3,14 +3,15 @@ import { describe, expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
 import CartItem from "../CartItem";
 import { BrowserRouter } from "react-router-dom";
+import { ModalContext } from "../../routes/App";
 
 describe("CartItem component", () => {
 
-    function setup(jsx)
+    function setup(jsx, contextProps)
     {
         return {
             user: userEvent.setup(),
-            ...render(jsx, {wrapper: BrowserRouter}),
+            ...render(<ModalContext.Provider value={[...contextProps]}>{jsx}</ModalContext.Provider>, {wrapper: BrowserRouter}),
         }
     }
 
@@ -29,8 +30,9 @@ describe("CartItem component", () => {
 
     it("Shows item's title in a link pointing to item's id", () => {
 
+        const openModal = vi.fn();
         const item = generateItem();
-        const { container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={() => {}} item={item}/>);
+        const { container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={() => {}} item={item}/>, [openModal]);
         const titleElement = container.querySelector("a#itemTitle");
 
         expect(titleElement.textContent).toBe(item.title);
@@ -39,9 +41,10 @@ describe("CartItem component", () => {
 
     it("Closes cart when an item link is clicked", async () => {
 
+        const openModal = vi.fn();
         const item = generateItem();
         const closeCart = vi.fn();
-        const { user, container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={closeCart} item={item}/>);
+        const { user, container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={closeCart} item={item}/>, [openModal]);
         const titleElement = container.querySelector("a#itemTitle");
         await user.click(titleElement);
 
@@ -50,8 +53,9 @@ describe("CartItem component", () => {
 
     it("Shows item's total cost", () => {
 
+        const openModal = vi.fn();
         const item = generateItem();
-        const { container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={() => {}} item={item}/>);
+        const { container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={() => {}} item={item}/>, [openModal]);
         const totalCostElement = container.querySelector("#itemTotalCost");
 
         expect(totalCostElement.textContent.toLowerCase()).toContain("total");
@@ -60,8 +64,9 @@ describe("CartItem component", () => {
 
     it("Shows item's amount in a number input", () => {
 
+        const openModal = vi.fn();
         const item = generateItem();
-        const { container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={() => {}} item={item}/>);
+        const { container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={() => {}} item={item}/>, [openModal]);
         const inputElement = container.querySelector("input#orderAmount" + item.id);
 
         expect(inputElement.value).toBe(item.amount.toString());
@@ -69,9 +74,10 @@ describe("CartItem component", () => {
 
     it("Calls setCart function when amount number input changes", async () => {
 
+        const openModal = vi.fn();
         const item = generateItem();
         const setCart = vi.fn();
-        const { user, container } = setup(<CartItem cart={[]} setCart={setCart} closeCart={() => {}} item={item}/>);
+        const { user, container } = setup(<CartItem cart={[]} setCart={setCart} closeCart={() => {}} item={item}/>, [openModal]);
         const inputElement = container.querySelector("input#orderAmount" + item.id);
         await user.click(inputElement);
         await user.keyboard("6");
@@ -81,21 +87,23 @@ describe("CartItem component", () => {
 
     it("Renders a remove from cart button", () => {
 
+        const openModal = vi.fn();
         const item = generateItem();
-        const { container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={() => {}} item={item}/>);
+        const { container } = setup(<CartItem cart={[]} setCart={() => {}} closeCart={() => {}} item={item}/>, [openModal]);
         const removeItemButton = container.querySelector("button#removeItemButton");
 
         expect(removeItemButton.textContent.toLowerCase()).toContain("remove");
     });
 
-    it("Calls setCart function when remove from cart button is clicked", async () => {
+    it("Opens a confirm modal when remove item button is clicked", async () => {
 
+        const openModal = vi.fn();
         const item = generateItem();
         const setCart = vi.fn();
-        const { user, container } = setup(<CartItem cart={[]} setCart={setCart} closeCart={() => {}} item={item}/>);
+        const { user, container } = setup(<CartItem cart={[]} setCart={setCart} closeCart={() => {}} item={item}/>, [openModal]);
         const removeItemButton = container.querySelector("button#removeItemButton");
         await user.click(removeItemButton);
 
-        expect(setCart).toHaveBeenCalledOnce();
+        expect(openModal).toHaveBeenCalledOnce();
     });
 });
