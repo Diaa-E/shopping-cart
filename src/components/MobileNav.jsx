@@ -19,7 +19,7 @@ export default function MobileNav({ setLockScroll })
             {
                 open &&
                 <div id="navBackdrop" onClick={() => setOpen(false)} className={styles["nav-backdrop"]}> 
-                    <nav onClick={e => e.stopPropagation()} className={styles["nav-container"]}>
+                    <nav id="navMenu" onClick={e => e.stopPropagation()} className={styles["nav-container"]}>
                         <div className={styles["nav-header"]}>
                             <h1 className={styles["nav-title"]}>Go to</h1>
                             <IconButton
@@ -38,7 +38,7 @@ export default function MobileNav({ setLockScroll })
             }
             <IconButton
                 icon={appIcons.menu}
-                id={"navMenu"}
+                id={"navMenuButton"}
                 onClick={() => setOpen(true)}
                 text={"open navigation menu"}
             />

@@ -8,7 +8,7 @@ export default function NavBar({ mobileMode, setLockScroll })
     if (mobileMode) return <MobileNav setLockScroll={setLockScroll} />
 
     return (
-        <nav>
+        <nav id="navBar">
             <ul className={styles["nav-container"]}>
                 <NavItem to={"/shop"} text={"Shop"}/>
                 <NavItem to={"/about"} text={"About"}/>
