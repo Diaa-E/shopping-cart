@@ -15,7 +15,10 @@ export default function Modal({ modalState, closeModal })
                 />
                 <RegularButton
                     id={"confirmButton"}
-                    onClick={modalState.onConfirm}
+                    onClick={() => {
+                        modalState.onConfirm();
+                        closeModal();
+                    }}
                     text={modalState.actionText}
                     style="danger"
                 />
