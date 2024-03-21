@@ -1,0 +1,27 @@
+.modal-backdrop{
+    composes: cart-backdrop from "./Cart.module.css";
+    place-items: center;
+    place-content: center;
+}
+
+.modal{
+    background-color: var(--bg-secondary);
+    min-width: 400px;
+    min-height: 200px;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: stretch;
+}
+
+.prompt{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    color: var(--text);
+    text-align: center;
+}

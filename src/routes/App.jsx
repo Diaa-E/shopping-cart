@@ -12,12 +12,14 @@ import Cart from '../components/Cart';
 import logo from "../assets/images/logo.svg";
 import FooterLink from '../components/FooterLink';
 import { appIcons } from '../data/appIcons.barrel';
+import Modal from '../components/Modal';
 
 function App() {
 
   const [cart, setCart] = useState([]);
   const [openCart, setOpenCart] = useState(false);
   const [lockScroll, setLockScroll] = useState(false);
+  const [modalState, setModalState] = useState({open: false, prompt: "", actionText: "", onConfirm: () => {}})
 
   useEffect(() => {
 
@@ -29,6 +31,16 @@ function App() {
 
     document.body.classList.add(theme.light);
   })
+
+  function closeModal()
+  {
+    setModalState({open: false, prompt: "", actionText: "", onConfirm: () => {}});
+  }
+
+  function openModal(prompt, actionText, onConfirmCallback)
+  {
+    setModalState({open: true, prompt: prompt, actionText: actionText, onConfirm: onConfirmCallback});
+  }
 
   return (
     <>
@@ -163,6 +175,13 @@ function App() {
           />
         </div>
       </footer>
+      {
+        modalState.open &&
+        <Modal
+          modalState={modalState}
+          closeModal={closeModal}
+        />
+      }
     </>
   )
 }
