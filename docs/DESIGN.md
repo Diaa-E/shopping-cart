@@ -76,6 +76,7 @@
     - ~~Home~~
     - ~~Product details~~
 
-1. ### Dark mode
+1. ### ❌ Dark mode
+    - Cancelled => product images are not designed for colord background
 
-1. ### Mobile display
+1. ### ✅ Mobile display

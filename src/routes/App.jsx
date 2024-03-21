@@ -89,7 +89,7 @@ function App() {
         {
           mobileMode &&
           <>
-            <NavBar mobileMode={mobileMode} />
+            <NavBar setLockScroll={setLockScroll} mobileMode={mobileMode} />
             <Link to={"/"}>
               <img className={styles["logo"]} src={logo} alt="Carter's online shop logo" />
             </Link>

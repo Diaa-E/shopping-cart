@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "../styles/MobileNav.module.css";
 import IconButton from "./IconButton";
 import { appIcons } from "../data/appIcons.barrel";
 import { Link, useResolvedPath, useMatch } from "react-router-dom";
 
-export default function MobileNav({ })
+export default function MobileNav({ setLockScroll })
 {
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+
+        open ? setLockScroll(true) : setLockScroll(false);
+        
+    }, [open])
 
     return (
         <>

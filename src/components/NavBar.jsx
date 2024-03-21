@@ -3,9 +3,9 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom";
 import styles from "../styles/NavBar.module.css";
 import MobileNav from "./MobileNav";
 
-export default function NavBar({ mobileMode })
+export default function NavBar({ mobileMode, setLockScroll })
 {
-    if (mobileMode) return <MobileNav />
+    if (mobileMode) return <MobileNav setLockScroll={setLockScroll} />
 
     return (
         <nav>
