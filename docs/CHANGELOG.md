@@ -6,6 +6,11 @@ This change log only highlights important changes.
 - 🛠️ : Fix
 - ⚙️ : Code change with no impact on the user experience.
 
+### **1.0.3 (22 Mar, 2024)**
+
+- 🛠️ Fix Modal dialog width on mobile display.
+- 🛠️ Fix about page not distributing paragraphs correctly on wide screens.
+
 ### **1.0.2 (22 Mar, 2024)**
 
 - 🛠️ Fix fonts and margins on mobile display being too big.
