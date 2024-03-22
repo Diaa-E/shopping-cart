@@ -4,11 +4,11 @@
     grid-auto-rows: min-content;
     place-items: stretch;
     place-content: stretch;
-    gap: 1rem;
+    gap: .5rem;
     border-radius: 1rem;
     box-shadow: var(--shadow);
     background-color: var(--bg-secondary);
-    padding: 3rem;
+    padding: 1.2rem;
 }
 
 .thumb{
@@ -19,15 +19,15 @@
 
 .title{
     color: var(--text);
-    font-size: 1.2rem;
+    font-size: 1rem;
     place-self: flex-start;
     cursor: pointer;
 }
 
 .total{
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
     margin: auto 0 0 0;
 }
 
@@ -37,5 +37,16 @@
         grid-template-columns: 1fr 2fr;
         grid-template-rows: repeat(3, min-content);
         padding: 1rem;
+        gap: 1rem;
+        padding: 3rem;
+    }
+
+    .title{
+        font-size: 1.2rem;
+    }
+
+    .total{
+        font-size: 1.5rem;
+gap: 1rem;
     }
 }
