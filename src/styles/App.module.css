@@ -17,7 +17,7 @@
     background-color: var(--accent);
     color: var(--text);
     margin: auto 0 0 0;
-    padding: 3rem;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -40,6 +40,10 @@
 
 @media (min-width: 700px) {
     
+    .footer{
+        padding: 3rem;
+    }
+
     .footer-list{
         gap: 0;
     }

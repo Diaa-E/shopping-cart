@@ -1,13 +1,22 @@
 .footer-link{
     display: flex;
-    gap: .5rem;
+    gap: .3rem;
     align-items: center;
     cursor: pointer;
     color: var(--text);
     text-decoration: underline;
+    font-size: .9rem;
 }
 
 .footer-link>img{
     cursor: inherit;
     height: 20px;
+}
+
+@media (min-width: 700px) {
+    
+    .footer-link{
+        gap: .5rem;
+        font-size: 1rem;
+    }
 }
