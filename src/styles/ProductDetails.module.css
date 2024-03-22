@@ -2,12 +2,12 @@
     position: relative;
     background-color: var(--bg-secondary);
     box-shadow: var(--shadow);
-    margin: 2rem;
+    margin: 1rem;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .product-details-container>img{
@@ -22,17 +22,17 @@
 }
 
 .details>h1{
-    font-size: 2rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
 .price{
-    font-size: 2rem;
+    font-size: 1rem;
     margin: auto 0 0 0;
 }
 
 .price-fraction{
-    font-size: 1.3rem;
+    font-size: .8rem;
 }
 
 .remove-button{
@@ -44,5 +44,20 @@
     
     .product-details-container{
         grid-template-columns: 1fr 2fr;
+        margin: 2rem;
+        padding: 2rem;
+        gap: 3rem;
+    }
+
+    .details>h1{
+        font-size: 2rem;
+    }
+
+    .price{
+        font-size: 2rem;
+    }
+
+    .price-fraction{
+        font-size: 1.3rem;
     }
 }
