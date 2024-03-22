@@ -6,7 +6,7 @@
 }
 
 .cart-button>img{
-    height: 40px;
+    height: 30px;
     cursor: inherit;
 }
 
@@ -16,12 +16,25 @@
     place-content: center;
     cursor: inherit;
     background-color: var(--accent);
-    font-size: .8rem;
-    padding: .5rem;
-    min-width: 1.5rem;
-    height: 1.5rem;
+    font-size: .6rem;
+    min-width: 1.2rem;
+    height: 1.2rem;
     border-radius: 5rem;
     margin: auto auto -1rem -1rem;
     font-weight: bold;
     box-shadow: var(--shadow);
+}
+
+@media (min-width: 700px) {
+    
+    .cart-button>img{
+        height: 40px;
+    }
+
+    .count{
+        font-size: .8rem;
+        padding: .5rem;
+        min-width: 1.5rem;
+        height: 1.5rem;
+    }
 }
