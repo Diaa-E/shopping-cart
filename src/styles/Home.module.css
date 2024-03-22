@@ -1,7 +1,7 @@
 .hero{
     background-image: url("../assets/images/hero.jpg");
     width: 100%;
-    min-height: 700px;
+    min-height: 500px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,19 +16,19 @@
     flex-direction: column;
     place-items: center;
     place-content: center;
-    padding: 2rem;
-    gap: 1rem;
+    padding: 1rem;
+    gap: .5rem;
 }
 
 .hero-banner h1{
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 2rem;
     color: var(--bg-secondary);
 }
 
 .hero-banner h2{
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--accent);
 }
 
@@ -38,7 +38,7 @@
 }
 
 .promo{
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -47,12 +47,12 @@
 }
 
 .promo h3{
-    font-size: 2rem;
+    font-size: 1.2rem;
 }
 
 .promo h2{
     color: var(--accent);
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .promo>img{
@@ -78,5 +78,27 @@
         background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.741), rgba(0, 0, 0, 0.541), var(--none));
         background-color: var(--none);
         width: 50%;
+        padding: 2rem;
+        gap: 1rem;
+    }
+
+    .hero-banner h1{
+        font-size: 4rem;
+    }
+
+    .hero-banner h2{
+        font-size: 2rem;
+    }
+
+    .promo{
+        padding: 2rem;
+    }
+
+    .promo h3{
+        font-size: 2rem;
+    }
+    
+    .promo h2{
+        font-size: 3rem;
     }
 }

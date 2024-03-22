@@ -1,7 +1,7 @@
 .button{
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: bold;
-    padding: .5rem;
+    padding: .3rem;
     border-radius: 5rem;
     cursor: pointer;
 }
@@ -28,4 +28,12 @@
     background-color: var(--danger);
     border: solid var(--danger) 2px;
     color: var(--bg-secondary);
+}
+
+@media (min-width: 700px) {
+    
+    .button{
+        font-size: 1rem;
+        padding: .5rem;
+    }
 }
