@@ -6,7 +6,7 @@ This change log only highlights important changes.
 - 🛠️ : Fix
 - ⚙️ : Code change with no impact on the user experience.
 
-### **1.0.2 (unreleased)**
+### **1.0.2 (22 Mar, 2024)**
 
 - 🛠️ Fix fonts and margins on mobile display being too big.
 - 🛠️ Fix logo not being centered in header on mobile display.
