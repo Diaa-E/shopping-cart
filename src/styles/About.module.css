@@ -45,7 +45,7 @@
     grid-area: three;
 }
 
-@media (min-wdth: 700px) {
+@media (min-width: 700px) {
 
     .hero{
         grid-template-columns: repeat(3, 1fr);
