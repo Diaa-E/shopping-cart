@@ -6,7 +6,7 @@ This change log only highlights important changes.
 - 🛠️ : Fix
 - ⚙️ : Code change with no impact on the user experience.
 
-### **1.0.4 (unreleased)**
+### **1.0.4 (Mar 23, 2024)**
 
 - ➕ Added open animations to mobile navigation menu and cart.
 - ➕ Added item quantity fin-tuning buttons.
