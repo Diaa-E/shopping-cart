@@ -4,3 +4,8 @@
     text-align: center;
     cursor: text;
 }
+
+.number-input-container{
+    display: flex;
+    gap: 1rem;
+}

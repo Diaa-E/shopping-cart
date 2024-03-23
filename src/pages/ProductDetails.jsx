@@ -43,6 +43,7 @@ export default function ProductDetails({})
                             max={9999}
                             value={amount}
                             onChange={(e) => setAmount(+e.target.value < 1 || +e.target.value > 9999 ? 1 : +e.target.value)}
+                            setValue={setAmount}
                         />
                         <RegularButton
                             text={"Add to cart"}
