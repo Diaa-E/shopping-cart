@@ -9,6 +9,7 @@ This change log only highlights important changes.
 ### **1.0.4 (unreleased)**
 
 - 🛠️ Fix product details text overflow.
+- 🛠️ Fix scroll not resetting when opening new pages.
 
 ### **1.0.3 (22 Mar, 2024)**
 

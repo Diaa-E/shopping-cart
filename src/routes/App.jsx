@@ -13,6 +13,7 @@ import logo from "../assets/images/logo.svg";
 import FooterLink from '../components/FooterLink';
 import { appIcons } from '../data/appIcons.barrel';
 import Modal from '../components/Modal';
+import { ScrollRestoration } from 'react-router-dom';
 
 export const ModalContext = createContext(null);
 
@@ -239,6 +240,7 @@ function App() {
           closeModal={closeModal}
         />
       }
+      <ScrollRestoration/>
     </>
   )
 }
