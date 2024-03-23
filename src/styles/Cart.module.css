@@ -11,6 +11,7 @@
 }
 
 .cart-container{
+    will-change: transform;
     display: flex;
     flex-direction: column;
     border-radius: 1rem;
