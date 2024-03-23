@@ -49,7 +49,7 @@ export default function MobileNav({ setLockScroll })
 function NavItem({to, text, onClick})
 {
     const resolvedPath = useResolvedPath(to);
-    const isActive = useMatch({ path: resolvedPath.pathname, end: true});
+    const isActive = useMatch({ path: resolvedPath.pathname, end: false});
     const classes = [styles["nav-item"], isActive ? styles["active"] : ""];
 
     return (

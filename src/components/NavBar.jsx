@@ -20,7 +20,7 @@ export default function NavBar({ mobileMode, setLockScroll })
 function NavItem({to, text})
 {
     const resolvedPath = useResolvedPath(to);
-    const isActive = useMatch({ path: resolvedPath.pathname, end: true});
+    const isActive = useMatch({ path: resolvedPath.pathname, end: false});
     const classes = [styles["nav-item"], isActive ? styles["active"] : ""];
 
     return (

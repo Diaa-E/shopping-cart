@@ -11,6 +11,7 @@ This change log only highlights important changes.
 - ➕ Added open animations to mobile navigation menu and cart.
 - ➕ Added item quantity fin-tuning buttons.
 - ➕ Added a magnifying glass icon next to search bar.
+- 🛠️ Fixed shop navigation link not appearing active when user navigates to a product's page.
 - 🛠️ Fixed product details text overflow.
 - 🛠️ Fixed scroll not resetting when opening new pages.
 
