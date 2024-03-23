@@ -1,7 +1,7 @@
 # Shopping Cart
 
 - A generic shopping cart.
-- This project's purpose was practicing client-side routing, custom hooks, and and CSS modules using Vite and React.
+- This project's purpose was practicing client-side routing, custom hooks, and CSS modules using Vite and React.
 
 ## Live Preview
 
