@@ -21,9 +21,10 @@
     flex-direction: column;
     gap: 1rem;
     justify-content: flex-start;
-    word-wrap: break-word;
+    word-wrap: break-all;
     text-wrap: wrap;
     overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 .details>h1{
