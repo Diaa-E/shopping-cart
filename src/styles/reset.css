@@ -16,12 +16,3 @@ a{
     outline: none;
     cursor: default;
 }
-
-input[type=text]{
-    cursor: text;
-}
-
-img, picture, svg, video{
-    display: block;
-    max-width: 100%;
-}

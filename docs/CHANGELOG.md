@@ -6,6 +6,10 @@ This change log only highlights important changes.
 - 🛠️ : Fix
 - ⚙️ : Code change with no impact on the user experience.
 
+### **1.0.4 (unreleased)**
+
+- 🛠️ Fix product details text overflow.
+
 ### **1.0.3 (22 Mar, 2024)**
 
 - 🛠️ Fix Modal dialog width on mobile display.
