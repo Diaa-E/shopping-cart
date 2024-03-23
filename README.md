@@ -27,3 +27,4 @@
 - [Image by PublicDomainPictures from Pixabay](https://pixabay.com/photos/birthday-box-celebration-christmas-2019/)
 - [Image by jan mesaros from Pixabay](https://pixabay.com/photos/box-open-top-package-packaging-550405/)
 - [Loading spinner](https://loading.io/css/)
+- [Fake Store API](https://fakestoreapi.com/)
