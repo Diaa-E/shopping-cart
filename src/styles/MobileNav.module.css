@@ -12,6 +12,9 @@
     box-shadow: var(--shadow);
     border-radius: 1rem;
     gap: 3rem;
+    animation-name: nav-fade-in;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
 }
 
 .nav-header{
@@ -41,4 +44,15 @@
 
 .active{
     background-color: var(--accent);
+}
+
+@keyframes nav-fade-in {
+    
+    0%{
+        transform: translateX(-100dvw);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
 }
