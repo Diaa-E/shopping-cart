@@ -8,6 +8,7 @@ This change log only highlights important changes.
 
 ### **1.0.4 (unreleased)**
 
+- ➕ Add a magnifying glass icon next to search bar.
 - 🛠️ Fix product details text overflow.
 - 🛠️ Fix scroll not resetting when opening new pages.
 

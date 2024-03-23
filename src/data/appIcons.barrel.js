@@ -5,6 +5,7 @@ import githubIcon from "../assets/icons/github.svg";
 import facebookIcon from "../assets/icons/facebook.svg";
 import xIcon from "../assets/icons/x.svg";
 import menuIcon from "../assets/icons/menu.svg";
+import searchIcon from "../assets/icons/search.svg";
 
 export const appIcons = {
 
@@ -14,5 +15,6 @@ export const appIcons = {
     close: closeIcon,
     github: githubIcon,
     facebook: facebookIcon,
-    x: xIcon
+    x: xIcon,
+    search: searchIcon,
 }
