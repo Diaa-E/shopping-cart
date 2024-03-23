@@ -16,3 +16,8 @@ a{
     outline: none;
     cursor: default;
 }
+
+img, svg, video{
+    display: block;
+    max-width: 100%;
+}
