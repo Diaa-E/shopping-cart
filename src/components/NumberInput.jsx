@@ -11,7 +11,7 @@ export function NumberInput({ value, onChange, setValue, max, min, id, name })
             id={"minusButton"}
             text={"Reduce quantity by one"}
             classes={[styles["minus-button"]]}
-            onClick={() => {setValue(+value === min ? min : value - 1)}}
+            onClick={() => {setValue(+value === min ? min : +value - 1)}}
         />
         <input
             className={styles["number-input"]}
@@ -27,7 +27,7 @@ export function NumberInput({ value, onChange, setValue, max, min, id, name })
             icon={appIcons.plus}
             id={"plusButton"}
             text={"Increase quantity by one"}
-            onClick={() => {setValue(+value === max ? max : value + 1)}}
+            onClick={() => {setValue(+value === max ? max : +value + 1)}}
         />
     </div>
     )
