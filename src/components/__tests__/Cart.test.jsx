@@ -1,11 +1,14 @@
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { render } from "@testing-library/react";
 import Cart from "../Cart";
 import { BrowserRouter } from "react-router-dom"; //Link element requires router context
 import { ModalContext } from "../../routes/App";
 
 describe("Cart component", () => {
+
+    beforeEach(() => vi.useFakeTimers({shouldAdvanceTime: true}));
+    afterEach(() => vi.resetAllMocks());
 
     function setup(jsx, contextProps)
     {
@@ -42,6 +45,7 @@ describe("Cart component", () => {
         const { user, container } = setup(<Cart cart={[]} setCart={() => {}} closeCart={closeCart}/>, [openModal]);
         const overlayDiv = container.querySelector("#cartBackdrop");
         await user.click(overlayDiv);
+        vi.runAllTimers();
 
         expect(closeCart).toHaveBeenCalledOnce();
     });
@@ -73,6 +77,7 @@ describe("Cart component", () => {
         const { user, container } = setup(<Cart cart={[]} setCart={() => {}} closeCart={closeCart}/>, [openModal]);
         const closeCartButton = container.querySelector("button#closeCart");
         await user.click(closeCartButton);
+        vi.runAllTimers();
 
         expect(closeCart).toHaveBeenCalledOnce();
     });
@@ -131,7 +136,7 @@ describe("Cart component", () => {
         expect(clearCartButton.textContent.toLowerCase()).toContain("clear");
     });
 
-    it("Opens modal when clear cart button is clicked", async () => {
+    it("Opens modal when clear cart button is clicked", {timeout: 600}, async () => {
 
         const openModal = vi.fn();
         const setCart = vi.fn().mockImplementation((cart) => cart);
