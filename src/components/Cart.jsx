@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { appIcons } from "../data/appIcons.barrel";
 import styles from "../styles/Cart.module.css";
 import { getSubtotal } from "../utils/subtotal";
@@ -11,21 +11,31 @@ import { ModalContext } from "../routes/App";
 export default function Cart({ closeCart, cart, setCart })
 {
     const [openModal] = useContext(ModalContext);
+    const [mounted, setMounted] = useState(true);
+
+    useEffect(() => {
+
+        if (!mounted)
+        {
+            setTimeout(closeCart, 500);
+        }
+
+    }, [mounted]);
 
     return (
         <div 
             id="cartBackdrop"
-            onClick={closeCart}
+            onClick={() => setMounted(false)}
             className={styles["cart-backdrop"]}
         >
-            <div id="cart" onClick={e => e.stopPropagation()} className={styles["cart-container"]}>
+            <div id="cart" onClick={e => e.stopPropagation()} className={`${styles["cart-container"]} ${mounted ? styles["mount"] : styles["unmount"]}`}>
                 <div id="cartHeader" className={styles["header"]}>
                     <h1 id="cartTitle" className={styles["title"]}>Shopping Cart {`(${cart.length})`}</h1>
                     <IconButton
                         icon={appIcons.close}
                         id={"closeCart"}
                         text={"Close cart"}
-                        onClick={closeCart}
+                        onClick={() => setMounted(false)}
                     />
                 </div>
                 <div id="cartItems" className={styles["cart-items"]}>

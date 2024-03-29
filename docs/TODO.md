@@ -3,8 +3,8 @@
 Todo list for ideas after first build.
 
 - Fix home promo images shrinking too much in firefox.
-- Animate car unmount
 - animate mobile nav unmount.
+- ~~Animate cart unmount~~ ✅
 - ~~animate mobile nav mount.~~ ✅
 - ~~Animate cart mount.~~ ✅
 - ~~Add custom buttons for increasing/decreasing number input value.~~ ✅
