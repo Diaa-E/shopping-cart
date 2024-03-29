@@ -7,20 +7,12 @@ import IconButton from "./IconButton";
 import PriceTag from "./PriceTag";
 import RegularButton from "./RegularButton";
 import { ModalContext } from "../routes/App";
+import useMount from "../hooks/useMount";
 
 export default function Cart({ closeCart, cart, setCart })
 {
     const [openModal] = useContext(ModalContext);
-    const [mounted, setMounted] = useState(true);
-
-    useEffect(() => {
-
-        if (!mounted)
-        {
-            setTimeout(closeCart, 500);
-        }
-
-    }, [mounted]);
+    const [mounted, setMounted] = useMount(closeCart, 500);
 
     return (
         <div 
