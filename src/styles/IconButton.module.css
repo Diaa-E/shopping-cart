@@ -1,7 +1,6 @@
 .icon-button{
     background-color: var(--none);
     cursor: pointer;
-    padding: .5rem;
 }
 
 .icon-button>img{

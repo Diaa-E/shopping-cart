@@ -11,6 +11,7 @@ This change log only highlights important changes.
 - ➕ Added closing animation to cart menu.
 - ➕ Added closing animation to mobile navigation menu.
 - 🛠️ Optimized button hover effect.
+- 🛠️ Fix item quantity field stretching vertically.
 
 ### **1.0.4 (Mar 23, 2024)**
 
