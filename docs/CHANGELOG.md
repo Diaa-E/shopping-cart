@@ -10,6 +10,7 @@ This change log only highlights important changes.
 
 - ➕ Added closing animation to cart menu.
 - ➕ Added closing animation to mobile navigation menu.
+- 🛠️ Optimized button hover effect.
 
 ### **1.0.4 (Mar 23, 2024)**
 

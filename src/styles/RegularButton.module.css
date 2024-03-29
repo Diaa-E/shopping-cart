@@ -1,4 +1,5 @@
 .button{
+    will-change: filter;
     font-size: .9rem;
     font-weight: bold;
     padding: .3rem;
