@@ -16,6 +16,15 @@
     animation-name: nav-fade-in;
     animation-duration: .5s;
     animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.mount{
+    animation-name: nav-fade-in;
+}
+
+.unmount{
+    animation-name: nav-fade-out;
 }
 
 .nav-header{
@@ -45,6 +54,17 @@
 
 .active{
     background-color: var(--accent);
+}
+
+@keyframes nav-fade-out {
+    
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(-100dvw);
+    }
 }
 
 @keyframes nav-fade-in {
