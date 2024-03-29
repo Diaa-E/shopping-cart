@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 
-export default function useMount(unMountCallback, timeoutMS)
+export default function useMount(unMountCallback = () => {}, timeoutMS = 100)
 {
     const [mounted, setMounted] = useState(true);
 
     useEffect(() => {
 
+        let timeOut;
+
         if (!mounted)
         {
-            setTimeout(unMountCallback, timeoutMS);
+            timeOut = setTimeout(unMountCallback, timeoutMS);
         }
+
+        return () => clearTimeout(timeOut);
 
     }, [mounted]);
 
