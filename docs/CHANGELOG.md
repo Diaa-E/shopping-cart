@@ -6,7 +6,7 @@ This change log only highlights important changes.
 - 🛠️ : Fix
 - ⚙️ : Code change with no impact on the user experience.
 
-### **1.0.5 (unreleased)**
+### **1.0.5 (Mar 29, 2024)**
 
 - ➕ Added closing animation to cart menu.
 - ➕ Added closing animation to mobile navigation menu.
