@@ -6,15 +6,12 @@ export default function useMount(unMountCallback = () => {}, timeoutMS = 100)
 
     useEffect(() => {
 
-        let timeOut;
-
         if (!mounted)
         {
-            timeOut = setTimeout(unMountCallback, timeoutMS);
+            const timeOut = setTimeout(unMountCallback, timeoutMS);
+            return () => clearTimeout(timeOut);
         }
-
-        return () => clearTimeout(timeOut);
-
+        
     }, [mounted]);
 
     return [mounted, setMounted];
