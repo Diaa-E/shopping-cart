@@ -6,6 +6,10 @@ This change log only highlights important changes.
 - 🛠️ : Fix
 - ⚙️ : Code change with no impact on the user experience.
 
+### **1.0.6 (Mar 30, 2024)**
+
+- ➕ Added fade effect to cart and mobile navigation menus open/close animation.
+
 ### **1.0.5 (Mar 29, 2024)**
 
 - ➕ Added closing animation to cart menu.
