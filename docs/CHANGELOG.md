@@ -9,6 +9,7 @@ This change log only highlights important changes.
 ### **1.0.6 (Mar 30, 2024)**
 
 - ➕ Added fade effect to cart and mobile navigation menus open/close animation.
+- ➕ Quantity input box text is now highlighted when in focus for better mobile device experience.
 
 ### **1.0.5 (Mar 29, 2024)**
 

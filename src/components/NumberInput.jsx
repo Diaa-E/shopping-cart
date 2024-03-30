@@ -1,9 +1,12 @@
+import { useRef } from "react";
 import { appIcons } from "../data/appIcons.barrel";
 import styles from "../styles/NumberInput.module.css";
 import IconButton from "./IconButton";
 
 export function NumberInput({ value, onChange, setValue, max, min, id, name })
 {
+    const inputRef = useRef(null);
+
     return (
     <div className={styles["number-input-container"]}>
         <IconButton
@@ -22,6 +25,8 @@ export function NumberInput({ value, onChange, setValue, max, min, id, name })
             type="number"
             value={value}
             onChange={onChange}
+            onFocus={() => inputRef.current.select()}
+            ref={inputRef}
         />
         <IconButton
             icon={appIcons.plus}
