@@ -19,12 +19,11 @@ export default function Shop({})
     const [cart, setCart] = useOutletContext().cart;
     const products = useFetchData({url: 'https://fakestoreapi.com/products', method: "GET"});
     const categories = products.data ? extractCategories(products.data) : [];
-    const [selectedCat, setSelectedCat] = useState("");
-    const [filteredCat, setFilteredCat] = useState([]);
-    const [searchParams, setSearchParams] = useSearchParams({ q: "", sort: "a-z" });
-    
+    const [searchParams, setSearchParams] = useSearchParams({ q: "", sort: "a-z", cat: "" });
+
     const searchQuery = searchParams.get("q");
     const sortMode = searchParams.get("sort");
+    const selectedCat = searchParams.get("cat");
 
     const sorters = {
         "a-z": (items) => sortByTitle(items, false),
@@ -32,25 +31,6 @@ export default function Shop({})
         "price-l-h": (items) => sortByPrice(items, false),
         "price-h-l": (items) => sortByPrice(items, true),
     }
-
-    useEffect(() => {
-
-        if (products.data)
-        {
-            setSelectedCat(categories[0].value);
-            setFilteredCat(sorters[sortMode](products.data));
-        }
-
-    }, [products.data]);
-
-    useEffect(() => {
-
-        if (products.data)
-        {
-            setFilteredCat(sorters[sortMode](filterProducts(products.data, selectedCat)));
-        }
-
-    }, [selectedCat, sortMode]);
 
     if (products.loading) return <Loading/>
 
@@ -68,7 +48,11 @@ export default function Shop({})
                     selected={selectedCat}
                     options={categories}
                     onChange={(e) => {
-                        setSelectedCat(e.target.value);
+                        setSearchParams(prev => {
+
+                            prev.set("cat", e.target.value);
+                            return prev;
+                        }, { replace: true });
                     }}
                 />
                 <SelectInput
@@ -109,7 +93,8 @@ export default function Shop({})
             </div>
             <div className={styles["items-container"]}>
             {
-                filteredCat.filter(item => {
+                sorters[sortMode](filterProducts(products.data, selectedCat))
+                .filter(item => {
 
                     if (searchQuery === "") return true;
 
