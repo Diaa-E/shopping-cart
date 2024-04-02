@@ -6,6 +6,10 @@ This change log only highlights important changes.
 - 🛠️ : Fix
 - ⚙️ : Code change with no impact on the user experience.
 
+### **1.0.7 (Apr 2, 2024)**
+
+- ➕ Search and sorting parameters no longer reset when the page is changed/reloaded.
+
 ### **1.0.6 (Mar 30, 2024)**
 
 - ➕ Added fade effect to cart and mobile navigation menus open/close animation.
