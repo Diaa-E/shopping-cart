@@ -20,10 +20,11 @@ export default function Shop({})
     const products = useFetchData({url: 'https://fakestoreapi.com/products', method: "GET"});
     const categories = products.data ? extractCategories(products.data) : [];
     const [selectedCat, setSelectedCat] = useState("");
-    const [sortMode, setSortMode] = useState("a-z");
     const [filteredCat, setFilteredCat] = useState([]);
-    const [searchParams, setSearchParams] = useSearchParams({ q: "" });
+    const [searchParams, setSearchParams] = useSearchParams({ q: "", sort: "a-z" });
+    
     const searchQuery = searchParams.get("q");
+    const sortMode = searchParams.get("sort");
 
     const sorters = {
         "a-z": (items) => sortByTitle(items, false),
@@ -89,7 +90,11 @@ export default function Shop({})
                         },
                     ]}
                     onChange={(e) => {
-                        setSortMode(e.target.value);
+                        setSearchParams(prev => {
+
+                            prev.set("sort", e.target.value);
+                            return prev;
+                        }, { replace: true });
                     }}
                 />
                 <SearchBar
