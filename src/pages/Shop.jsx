@@ -9,7 +9,7 @@ import { filterProducts } from "../utils/filterProducts";
 import { sortByPrice, sortByTitle } from "../utils/productSorter";
 import SearchBar from "../components/SearchBar";
 import { searchCart } from "../utils/cartUtility";
-import { Outlet, useOutletContext, useParams } from "react-router-dom";
+import { Outlet, useOutletContext, useParams, useSearchParams } from "react-router-dom";
 import Loading from "../components/Loading";
 import FetchError from "../components/FetchError";
 
@@ -22,7 +22,8 @@ export default function Shop({})
     const [selectedCat, setSelectedCat] = useState("");
     const [sortMode, setSortMode] = useState("a-z");
     const [filteredCat, setFilteredCat] = useState([]);
-    const [searchQuery, setSearchQuery] = useState("");
+    const [searchParams, setSearchParams] = useSearchParams({ q: "" });
+    const searchQuery = searchParams.get("q");
 
     const sorters = {
         "a-z": (items) => sortByTitle(items, false),
@@ -93,7 +94,10 @@ export default function Shop({})
                 />
                 <SearchBar
                     query={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={(e) => setSearchParams(prev => {
+                        prev.set("q", e.target.value);
+                        return prev;
+                    }, { replace: true })}
                     id={"SearchProducts"}
                     name={"Search products"}
                 />
